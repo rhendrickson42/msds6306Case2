@@ -43,4 +43,4 @@ row.names(all) <- 1:nrow(all)
 colnames(all) <- c("Country","HDI")
 
 HDIbyCountry <- all
-write.csv(HDIbyCountry,"HDIbyCountry.csv")
+write.table(HDIbyCountry,sep=",","HDIbyCountry.csv",row.names=FALSE)
