@@ -1,4 +1,4 @@
-df <- read.csv("~/Documents/msds6306Case2/Data/Procrastination.csv", header=TRUE, stringsAsFactors = FALSE)
+df <- read.csv("~/msds6306Case2/Data/Procrastination.csv", header=TRUE, stringsAsFactors = FALSE)
 
 df <- df[ df$Age >= 18 , ]    ## remove underaged observation
 row.names(test) <- 1:nrow(test)        ## renumber rows
