@@ -70,5 +70,19 @@ test$GPMean <- rowMeans( test[,c(35:54)] )
 test$SWLSMean <- rowMeans( test[,c(55:59)] )
 
 
+## merge the original df with the hdi df
+HDI <- read.csv("~/Documents/HDIbyCountry.csv", stringsAsFactors = FALSE)
+
+## make sure the column you merge have the same name
+colnames(HDI)[1] <- "CountryOfRes"
+
+## create a new row for HDI that has "Other" as it's country, since that's in the original df
+HDI[nrow(HDI) + 1, ] = c("Other",NA,"none")
+
+test2 <- merge(test,HDI,by="CountryOfRes")    
+
+dim(test2)
+dim(test)         ## I lost 4107 - 40175 = 32 observations
+
 cleaned <- test
 write.csv(cleaned,"cleanedMike.csv")
