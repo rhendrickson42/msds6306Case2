@@ -1,18 +1,7 @@
 library("rvest")
-library("dplyr")
-library("tidyr")
 
 URL <- "https://en.wikipedia.org/wiki/List_of_countries_by_Human_Development_Index#Complete_list_of_countries"
 html <- read_html(URL)
-
-for(i in 1:6){
-  k = i + 3
-  table[i] <- html %>%
-    html_nodes("table") %>%
-    .[[4]] %>%
-    html_table(fill=TRUE) %>%
-    .[-1,c(3,4)]
-}
 
 table1 <- html %>%
   html_nodes("table") %>%
@@ -43,4 +32,4 @@ row.names(all) <- 1:nrow(all)
 colnames(all) <- c("Country","HDI")
 
 HDIbyCountry <- all
-write.table(HDIbyCountry,sep=",","HDIbyCountry.csv",row.names=FALSE)
+#write.table(HDIbyCountry,sep=",","HDIbyCountry.csv",row.names=FALSE)
