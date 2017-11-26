@@ -40,7 +40,7 @@ new_table3 <- get_TableFromWikipedia_html(web_html, table_index = 9, rows2remove
 new_table4 <- get_TableFromWikipedia_html(web_html, table_index = 12, rows2remove = c(1:3, 25:26), cols2keep = c(3:4))
 
 new_table1 <- fixup_HDI_table(new_table1, "very high human development")
-new_table2 <- fixup_HDI_table(new_table2, "high human develoopment")
+new_table2 <- fixup_HDI_table(new_table2, "high human development")
 new_table3 <- fixup_HDI_table(new_table3, "medium human development")
 new_table4 <- fixup_HDI_table(new_table4, "low human development")
 
