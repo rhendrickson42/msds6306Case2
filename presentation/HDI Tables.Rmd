@@ -1,0 +1,93 @@
+---
+title: "HDI Tables"
+author: "Randall Hendrickson"
+date: "November 26, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# if(!require("here")) cat("please install here package # devtools::install_github(\"krlmlr/here\")")
+
+library(here)
+data_setup_HDI_script <- here("scripts", "setup_HDI_data_randy.R")
+source(data_setup_HDI_script)
+```
+
+## Scrape the Human Development Index tables
+
+Get the Tables from Wikipedia
+
+```{r get_wikipedia_test}
+library(knitr)
+library(kableExtra)
+options(knitr.table.format = "html") 
+
+mylist_tables <- get_Wikipedia_HDI_tables()
+
+  main_table <- mylist_tables[[1]]
+ first_table <- mylist_tables[[2]]
+second_table <- mylist_tables[[3]]
+ third_table <- mylist_tables[[4]]
+fourth_table <- mylist_tables[[5]]
+
+```
+
+## Very High Human Development
+
+```{r output_wikipedia_table1}
+
+kable(first_table[,1:2], "html", caption = "Very High Human Development", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
+  column_spec(1:2, bold = T) %>%
+  row_spec(0, angle = -5) %>%
+  row_spec(10:11, bold = T, color = "white", background = "#D7261E")
+
+```
+
+## High Human Development
+
+```{r output_wikipedia_table2}
+
+kable(second_table, "html", caption = "High Human Development", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+```
+
+## Medium Human Development
+
+```{r output_wikipedia_table3}
+
+kable(third_table[,1:2], "html", caption = "Medium Human Development", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+```
+
+## Low Human Development
+
+```{r output_wikipedia_table4}
+
+kable(fourth_table, "html", caption = "Low Human Development", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+```
+
+## Main Table - all nations, highlighted
+
+```{r output_wikipedia_table_main}
+
+kable(main_table, "html", caption = "Low Human Development", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
+  row_spec(c(1, 51, 52, 105, 107, 147, 148, 188), bold = T, color = "white", background = "#D7261E")
+
+```
+
+Output SessionInfo()
+
+```{r output_sessionInfo}
+
+# log environment
+sessionInfo()
+
+```
+
