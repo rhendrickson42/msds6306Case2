@@ -51,23 +51,38 @@ second_table <- mylist_tables[[3]]
 fourth_table <- mylist_tables[[5]]
 ```
 
+
+<style>
+  .col2 {
+    columns: 2 200px;         
+    -webkit-columns: 2 200px; 
+    -moz-columns: 2 200px;    
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+</style>
+
 ## Very High Human Development
 
+<div class="col2">
 
 ```r
 kable(first_table[,1:2], "html", caption = "Very High Human Development", row.names=TRUE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
   column_spec(1:2, bold = T) %>%
-  row_spec(0, angle = -5) %>%
+#  row_spec(0, angle = -5) %>%
   row_spec(10:11, bold = T, color = "white", background = "#D7261E")
 ```
 
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
 <caption>Very High Human Development</caption>
  <thead><tr>
-<th style="text-align:left;-webkit-transform: rotate(-5deg); -moz-transform: rotate(-5deg); -ms-transform: rotate(-5deg); -o-transform: rotate(-5deg); transform: rotate(-5deg);">   </th>
-   <th style="text-align:left;-webkit-transform: rotate(-5deg); -moz-transform: rotate(-5deg); -ms-transform: rotate(-5deg); -o-transform: rotate(-5deg); transform: rotate(-5deg);"> Country </th>
-   <th style="text-align:left;-webkit-transform: rotate(-5deg); -moz-transform: rotate(-5deg); -ms-transform: rotate(-5deg); -o-transform: rotate(-5deg); transform: rotate(-5deg);"> HDI </th>
+<th style="text-align:left;">   </th>
+   <th style="text-align:left;"> Country </th>
+   <th style="text-align:left;"> HDI </th>
   </tr></thead>
 <tbody>
 <tr>
@@ -332,8 +347,9 @@ kable(first_table[,1:2], "html", caption = "Very High Human Development", row.na
 
 
 ```r
-kable(second_table, "html", caption = "High Human Development", row.names=TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+kable(second_table[,1:2], "html", caption = "High Human Development", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
+  column_spec(1:2, bold = T) 
 ```
 
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
@@ -342,348 +358,297 @@ kable(second_table, "html", caption = "High Human Development", row.names=TRUE) 
 <th style="text-align:left;">   </th>
    <th style="text-align:left;"> Country </th>
    <th style="text-align:left;"> HDI </th>
-   <th style="text-align:left;"> HDI_Category </th>
   </tr></thead>
 <tbody>
 <tr>
-<td style="text-align:left;"> 1 </td>
-   <td style="text-align:left;"> Belarus </td>
+<td style="text-align:left;font-weight: bold;"> 1 </td>
+   <td style="text-align:left;font-weight: bold;"> Belarus </td>
    <td style="text-align:left;"> 0.796 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 2 </td>
-   <td style="text-align:left;"> Oman </td>
+<td style="text-align:left;font-weight: bold;"> 2 </td>
+   <td style="text-align:left;font-weight: bold;"> Oman </td>
    <td style="text-align:left;"> 0.796 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 3 </td>
-   <td style="text-align:left;"> Barbados </td>
+<td style="text-align:left;font-weight: bold;"> 3 </td>
+   <td style="text-align:left;font-weight: bold;"> Barbados </td>
    <td style="text-align:left;"> 0.795 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 4 </td>
-   <td style="text-align:left;"> Uruguay </td>
+<td style="text-align:left;font-weight: bold;"> 4 </td>
+   <td style="text-align:left;font-weight: bold;"> Uruguay </td>
    <td style="text-align:left;"> 0.795 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 5 </td>
-   <td style="text-align:left;"> Bulgaria </td>
+<td style="text-align:left;font-weight: bold;"> 5 </td>
+   <td style="text-align:left;font-weight: bold;"> Bulgaria </td>
    <td style="text-align:left;"> 0.794 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 6 </td>
-   <td style="text-align:left;"> Kazakhstan </td>
+<td style="text-align:left;font-weight: bold;"> 6 </td>
+   <td style="text-align:left;font-weight: bold;"> Kazakhstan </td>
    <td style="text-align:left;"> 0.794 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 7 </td>
-   <td style="text-align:left;"> Bahamas </td>
+<td style="text-align:left;font-weight: bold;"> 7 </td>
+   <td style="text-align:left;font-weight: bold;"> Bahamas </td>
    <td style="text-align:left;"> 0.792 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 8 </td>
-   <td style="text-align:left;"> Malaysia </td>
+<td style="text-align:left;font-weight: bold;"> 8 </td>
+   <td style="text-align:left;font-weight: bold;"> Malaysia </td>
    <td style="text-align:left;"> 0.789 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 9 </td>
-   <td style="text-align:left;"> Palau </td>
+<td style="text-align:left;font-weight: bold;"> 9 </td>
+   <td style="text-align:left;font-weight: bold;"> Palau </td>
    <td style="text-align:left;"> 0.788 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 10 </td>
-   <td style="text-align:left;"> Panama </td>
+<td style="text-align:left;font-weight: bold;"> 10 </td>
+   <td style="text-align:left;font-weight: bold;"> Panama </td>
    <td style="text-align:left;"> 0.788 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 11 </td>
-   <td style="text-align:left;"> Antigua and Barbuda </td>
+<td style="text-align:left;font-weight: bold;"> 11 </td>
+   <td style="text-align:left;font-weight: bold;"> Antigua and Barbuda </td>
    <td style="text-align:left;"> 0.786 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 12 </td>
-   <td style="text-align:left;"> Seychelles </td>
+<td style="text-align:left;font-weight: bold;"> 12 </td>
+   <td style="text-align:left;font-weight: bold;"> Seychelles </td>
    <td style="text-align:left;"> 0.782 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 13 </td>
-   <td style="text-align:left;"> Mauritius </td>
+<td style="text-align:left;font-weight: bold;"> 13 </td>
+   <td style="text-align:left;font-weight: bold;"> Mauritius </td>
    <td style="text-align:left;"> 0.781 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 14 </td>
-   <td style="text-align:left;"> Trinidad and Tobago </td>
+<td style="text-align:left;font-weight: bold;"> 14 </td>
+   <td style="text-align:left;font-weight: bold;"> Trinidad and Tobago </td>
    <td style="text-align:left;"> 0.780 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 15 </td>
-   <td style="text-align:left;"> Costa Rica </td>
+<td style="text-align:left;font-weight: bold;"> 15 </td>
+   <td style="text-align:left;font-weight: bold;"> Costa Rica </td>
    <td style="text-align:left;"> 0.776 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 16 </td>
-   <td style="text-align:left;"> Serbia </td>
+<td style="text-align:left;font-weight: bold;"> 16 </td>
+   <td style="text-align:left;font-weight: bold;"> Serbia </td>
    <td style="text-align:left;"> 0.776 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 17 </td>
-   <td style="text-align:left;"> Cuba </td>
+<td style="text-align:left;font-weight: bold;"> 17 </td>
+   <td style="text-align:left;font-weight: bold;"> Cuba </td>
    <td style="text-align:left;"> 0.775 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 18 </td>
-   <td style="text-align:left;"> Iran </td>
+<td style="text-align:left;font-weight: bold;"> 18 </td>
+   <td style="text-align:left;font-weight: bold;"> Iran </td>
    <td style="text-align:left;"> 0.774 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 19 </td>
-   <td style="text-align:left;"> Georgia </td>
+<td style="text-align:left;font-weight: bold;"> 19 </td>
+   <td style="text-align:left;font-weight: bold;"> Georgia </td>
    <td style="text-align:left;"> 0.769 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 20 </td>
-   <td style="text-align:left;"> Turkey </td>
+<td style="text-align:left;font-weight: bold;"> 20 </td>
+   <td style="text-align:left;font-weight: bold;"> Turkey </td>
    <td style="text-align:left;"> 0.767 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 21 </td>
-   <td style="text-align:left;"> Venezuela </td>
+<td style="text-align:left;font-weight: bold;"> 21 </td>
+   <td style="text-align:left;font-weight: bold;"> Venezuela </td>
    <td style="text-align:left;"> 0.767 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 22 </td>
-   <td style="text-align:left;"> Sri Lanka </td>
+<td style="text-align:left;font-weight: bold;"> 22 </td>
+   <td style="text-align:left;font-weight: bold;"> Sri Lanka </td>
    <td style="text-align:left;"> 0.766 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 23 </td>
-   <td style="text-align:left;"> Saint Kitts and Nevis </td>
+<td style="text-align:left;font-weight: bold;"> 23 </td>
+   <td style="text-align:left;font-weight: bold;"> Saint Kitts and Nevis </td>
    <td style="text-align:left;"> 0.765 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 24 </td>
-   <td style="text-align:left;"> Albania </td>
+<td style="text-align:left;font-weight: bold;"> 24 </td>
+   <td style="text-align:left;font-weight: bold;"> Albania </td>
    <td style="text-align:left;"> 0.764 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 25 </td>
-   <td style="text-align:left;"> Lebanon </td>
+<td style="text-align:left;font-weight: bold;"> 25 </td>
+   <td style="text-align:left;font-weight: bold;"> Lebanon </td>
    <td style="text-align:left;"> 0.763 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 26 </td>
-   <td style="text-align:left;"> Mexico </td>
+<td style="text-align:left;font-weight: bold;"> 26 </td>
+   <td style="text-align:left;font-weight: bold;"> Mexico </td>
    <td style="text-align:left;"> 0.762 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 27 </td>
-   <td style="text-align:left;"> Azerbaijan </td>
+<td style="text-align:left;font-weight: bold;"> 27 </td>
+   <td style="text-align:left;font-weight: bold;"> Azerbaijan </td>
    <td style="text-align:left;"> 0.759 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 28 </td>
-   <td style="text-align:left;"> Brazil </td>
+<td style="text-align:left;font-weight: bold;"> 28 </td>
+   <td style="text-align:left;font-weight: bold;"> Brazil </td>
    <td style="text-align:left;"> 0.754 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 29 </td>
-   <td style="text-align:left;"> Grenada </td>
+<td style="text-align:left;font-weight: bold;"> 29 </td>
+   <td style="text-align:left;font-weight: bold;"> Grenada </td>
    <td style="text-align:left;"> 0.754 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 30 </td>
-   <td style="text-align:left;"> Bosnia and Herzegovina </td>
+<td style="text-align:left;font-weight: bold;"> 30 </td>
+   <td style="text-align:left;font-weight: bold;"> Bosnia and Herzegovina </td>
    <td style="text-align:left;"> 0.750 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 31 </td>
-   <td style="text-align:left;"> Macedonia </td>
+<td style="text-align:left;font-weight: bold;"> 31 </td>
+   <td style="text-align:left;font-weight: bold;"> Macedonia </td>
    <td style="text-align:left;"> 0.748 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 32 </td>
-   <td style="text-align:left;"> Algeria </td>
+<td style="text-align:left;font-weight: bold;"> 32 </td>
+   <td style="text-align:left;font-weight: bold;"> Algeria </td>
    <td style="text-align:left;"> 0.745 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 33 </td>
-   <td style="text-align:left;"> Armenia </td>
+<td style="text-align:left;font-weight: bold;"> 33 </td>
+   <td style="text-align:left;font-weight: bold;"> Armenia </td>
    <td style="text-align:left;"> 0.743 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 34 </td>
-   <td style="text-align:left;"> Ukraine </td>
+<td style="text-align:left;font-weight: bold;"> 34 </td>
+   <td style="text-align:left;font-weight: bold;"> Ukraine </td>
    <td style="text-align:left;"> 0.743 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 35 </td>
-   <td style="text-align:left;"> Jordan </td>
+<td style="text-align:left;font-weight: bold;"> 35 </td>
+   <td style="text-align:left;font-weight: bold;"> Jordan </td>
    <td style="text-align:left;"> 0.741 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 36 </td>
-   <td style="text-align:left;"> Peru </td>
+<td style="text-align:left;font-weight: bold;"> 36 </td>
+   <td style="text-align:left;font-weight: bold;"> Peru </td>
    <td style="text-align:left;"> 0.740 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 37 </td>
-   <td style="text-align:left;"> Thailand </td>
+<td style="text-align:left;font-weight: bold;"> 37 </td>
+   <td style="text-align:left;font-weight: bold;"> Thailand </td>
    <td style="text-align:left;"> 0.740 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 38 </td>
-   <td style="text-align:left;"> Ecuador </td>
+<td style="text-align:left;font-weight: bold;"> 38 </td>
+   <td style="text-align:left;font-weight: bold;"> Ecuador </td>
    <td style="text-align:left;"> 0.739 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 39 </td>
-   <td style="text-align:left;"> China </td>
+<td style="text-align:left;font-weight: bold;"> 39 </td>
+   <td style="text-align:left;font-weight: bold;"> China </td>
    <td style="text-align:left;"> 0.738 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 40 </td>
-   <td style="text-align:left;"> Fiji </td>
+<td style="text-align:left;font-weight: bold;"> 40 </td>
+   <td style="text-align:left;font-weight: bold;"> Fiji </td>
    <td style="text-align:left;"> 0.736 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 41 </td>
-   <td style="text-align:left;"> Mongolia </td>
+<td style="text-align:left;font-weight: bold;"> 41 </td>
+   <td style="text-align:left;font-weight: bold;"> Mongolia </td>
    <td style="text-align:left;"> 0.735 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 42 </td>
-   <td style="text-align:left;"> Saint Lucia </td>
+<td style="text-align:left;font-weight: bold;"> 42 </td>
+   <td style="text-align:left;font-weight: bold;"> Saint Lucia </td>
    <td style="text-align:left;"> 0.735 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 43 </td>
-   <td style="text-align:left;"> Jamaica </td>
+<td style="text-align:left;font-weight: bold;"> 43 </td>
+   <td style="text-align:left;font-weight: bold;"> Jamaica </td>
    <td style="text-align:left;"> 0.730 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 44 </td>
-   <td style="text-align:left;"> Colombia </td>
+<td style="text-align:left;font-weight: bold;"> 44 </td>
+   <td style="text-align:left;font-weight: bold;"> Colombia </td>
    <td style="text-align:left;"> 0.727 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 45 </td>
-   <td style="text-align:left;"> Dominica </td>
+<td style="text-align:left;font-weight: bold;"> 45 </td>
+   <td style="text-align:left;font-weight: bold;"> Dominica </td>
    <td style="text-align:left;"> 0.726 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 46 </td>
-   <td style="text-align:left;"> Suriname </td>
+<td style="text-align:left;font-weight: bold;"> 46 </td>
+   <td style="text-align:left;font-weight: bold;"> Suriname </td>
    <td style="text-align:left;"> 0.725 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 47 </td>
-   <td style="text-align:left;"> Tunisia </td>
+<td style="text-align:left;font-weight: bold;"> 47 </td>
+   <td style="text-align:left;font-weight: bold;"> Tunisia </td>
    <td style="text-align:left;"> 0.725 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 48 </td>
-   <td style="text-align:left;"> Dominican Republic </td>
+<td style="text-align:left;font-weight: bold;"> 48 </td>
+   <td style="text-align:left;font-weight: bold;"> Dominican Republic </td>
    <td style="text-align:left;"> 0.722 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 49 </td>
-   <td style="text-align:left;"> Saint Vincent and the Grenadines </td>
+<td style="text-align:left;font-weight: bold;"> 49 </td>
+   <td style="text-align:left;font-weight: bold;"> Saint Vincent and the Grenadines </td>
    <td style="text-align:left;"> 0.722 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 50 </td>
-   <td style="text-align:left;"> Tonga </td>
+<td style="text-align:left;font-weight: bold;"> 50 </td>
+   <td style="text-align:left;font-weight: bold;"> Tonga </td>
    <td style="text-align:left;"> 0.721 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 51 </td>
-   <td style="text-align:left;"> Libya </td>
+<td style="text-align:left;font-weight: bold;"> 51 </td>
+   <td style="text-align:left;font-weight: bold;"> Libya </td>
    <td style="text-align:left;"> 0.716 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 52 </td>
-   <td style="text-align:left;"> Belize </td>
+<td style="text-align:left;font-weight: bold;"> 52 </td>
+   <td style="text-align:left;font-weight: bold;"> Belize </td>
    <td style="text-align:left;"> 0.706 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 53 </td>
-   <td style="text-align:left;"> Samoa </td>
+<td style="text-align:left;font-weight: bold;"> 53 </td>
+   <td style="text-align:left;font-weight: bold;"> Samoa </td>
    <td style="text-align:left;"> 0.704 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 54 </td>
-   <td style="text-align:left;"> Maldives </td>
+<td style="text-align:left;font-weight: bold;"> 54 </td>
+   <td style="text-align:left;font-weight: bold;"> Maldives </td>
    <td style="text-align:left;"> 0.701 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 55 </td>
-   <td style="text-align:left;"> Uzbekistan </td>
+<td style="text-align:left;font-weight: bold;"> 55 </td>
+   <td style="text-align:left;font-weight: bold;"> Uzbekistan </td>
    <td style="text-align:left;"> 0.701 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 </tbody>
 </table>
+
+```r
+#  collapse_rows(columns = 3:4)
+```
 
 ## Medium Human Development
 
 
 ```r
 kable(third_table[,1:2], "html", caption = "Medium Human Development", row.names=TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
+  column_spec(1:2, bold = T) 
 ```
 
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
@@ -695,208 +660,208 @@ kable(third_table[,1:2], "html", caption = "Medium Human Development", row.names
   </tr></thead>
 <tbody>
 <tr>
-<td style="text-align:left;"> 1 </td>
-   <td style="text-align:left;"> Moldova </td>
+<td style="text-align:left;font-weight: bold;"> 1 </td>
+   <td style="text-align:left;font-weight: bold;"> Moldova </td>
    <td style="text-align:left;"> 0.699 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 2 </td>
-   <td style="text-align:left;"> Botswana </td>
+<td style="text-align:left;font-weight: bold;"> 2 </td>
+   <td style="text-align:left;font-weight: bold;"> Botswana </td>
    <td style="text-align:left;"> 0.698 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 3 </td>
-   <td style="text-align:left;"> Gabon </td>
+<td style="text-align:left;font-weight: bold;"> 3 </td>
+   <td style="text-align:left;font-weight: bold;"> Gabon </td>
    <td style="text-align:left;"> 0.697 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 4 </td>
-   <td style="text-align:left;"> Paraguay </td>
+<td style="text-align:left;font-weight: bold;"> 4 </td>
+   <td style="text-align:left;font-weight: bold;"> Paraguay </td>
    <td style="text-align:left;"> 0.693 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 5 </td>
-   <td style="text-align:left;"> Egypt </td>
+<td style="text-align:left;font-weight: bold;"> 5 </td>
+   <td style="text-align:left;font-weight: bold;"> Egypt </td>
    <td style="text-align:left;"> 0.691 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 6 </td>
-   <td style="text-align:left;"> Turkmenistan </td>
+<td style="text-align:left;font-weight: bold;"> 6 </td>
+   <td style="text-align:left;font-weight: bold;"> Turkmenistan </td>
    <td style="text-align:left;"> 0.691 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 7 </td>
-   <td style="text-align:left;"> Indonesia </td>
+<td style="text-align:left;font-weight: bold;"> 7 </td>
+   <td style="text-align:left;font-weight: bold;"> Indonesia </td>
    <td style="text-align:left;"> 0.689 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 8 </td>
-   <td style="text-align:left;"> Palestine </td>
+<td style="text-align:left;font-weight: bold;"> 8 </td>
+   <td style="text-align:left;font-weight: bold;"> Palestine </td>
    <td style="text-align:left;"> 0.684 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 9 </td>
-   <td style="text-align:left;"> Vietnam </td>
+<td style="text-align:left;font-weight: bold;"> 9 </td>
+   <td style="text-align:left;font-weight: bold;"> Vietnam </td>
    <td style="text-align:left;"> 0.683 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 10 </td>
-   <td style="text-align:left;"> Philippines </td>
+<td style="text-align:left;font-weight: bold;"> 10 </td>
+   <td style="text-align:left;font-weight: bold;"> Philippines </td>
    <td style="text-align:left;"> 0.682 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 11 </td>
-   <td style="text-align:left;"> El Salvador </td>
+<td style="text-align:left;font-weight: bold;"> 11 </td>
+   <td style="text-align:left;font-weight: bold;"> El Salvador </td>
    <td style="text-align:left;"> 0.680 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 12 </td>
-   <td style="text-align:left;"> Bolivia </td>
+<td style="text-align:left;font-weight: bold;"> 12 </td>
+   <td style="text-align:left;font-weight: bold;"> Bolivia </td>
    <td style="text-align:left;"> 0.674 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 13 </td>
-   <td style="text-align:left;"> South Africa </td>
+<td style="text-align:left;font-weight: bold;"> 13 </td>
+   <td style="text-align:left;font-weight: bold;"> South Africa </td>
    <td style="text-align:left;"> 0.666 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 14 </td>
-   <td style="text-align:left;"> Kyrgyzstan </td>
+<td style="text-align:left;font-weight: bold;"> 14 </td>
+   <td style="text-align:left;font-weight: bold;"> Kyrgyzstan </td>
    <td style="text-align:left;"> 0.664 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 15 </td>
-   <td style="text-align:left;"> Iraq </td>
+<td style="text-align:left;font-weight: bold;"> 15 </td>
+   <td style="text-align:left;font-weight: bold;"> Iraq </td>
    <td style="text-align:left;"> 0.649 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 16 </td>
-   <td style="text-align:left;"> Cape Verde </td>
+<td style="text-align:left;font-weight: bold;"> 16 </td>
+   <td style="text-align:left;font-weight: bold;"> Cape Verde </td>
    <td style="text-align:left;"> 0.648 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 17 </td>
-   <td style="text-align:left;"> Morocco </td>
+<td style="text-align:left;font-weight: bold;"> 17 </td>
+   <td style="text-align:left;font-weight: bold;"> Morocco </td>
    <td style="text-align:left;"> 0.647 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 18 </td>
-   <td style="text-align:left;"> Nicaragua </td>
+<td style="text-align:left;font-weight: bold;"> 18 </td>
+   <td style="text-align:left;font-weight: bold;"> Nicaragua </td>
    <td style="text-align:left;"> 0.645 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 19 </td>
-   <td style="text-align:left;"> Guatemala </td>
+<td style="text-align:left;font-weight: bold;"> 19 </td>
+   <td style="text-align:left;font-weight: bold;"> Guatemala </td>
    <td style="text-align:left;"> 0.640 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 20 </td>
-   <td style="text-align:left;"> Namibia </td>
+<td style="text-align:left;font-weight: bold;"> 20 </td>
+   <td style="text-align:left;font-weight: bold;"> Namibia </td>
    <td style="text-align:left;"> 0.640 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 21 </td>
-   <td style="text-align:left;"> Guyana </td>
+<td style="text-align:left;font-weight: bold;"> 21 </td>
+   <td style="text-align:left;font-weight: bold;"> Guyana </td>
    <td style="text-align:left;"> 0.638 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 22 </td>
-   <td style="text-align:left;"> Micronesia </td>
+<td style="text-align:left;font-weight: bold;"> 22 </td>
+   <td style="text-align:left;font-weight: bold;"> Micronesia </td>
    <td style="text-align:left;"> 0.638 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 23 </td>
-   <td style="text-align:left;"> Tajikistan </td>
+<td style="text-align:left;font-weight: bold;"> 23 </td>
+   <td style="text-align:left;font-weight: bold;"> Tajikistan </td>
    <td style="text-align:left;"> 0.627 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 24 </td>
-   <td style="text-align:left;"> Honduras </td>
+<td style="text-align:left;font-weight: bold;"> 24 </td>
+   <td style="text-align:left;font-weight: bold;"> Honduras </td>
    <td style="text-align:left;"> 0.625 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 25 </td>
-   <td style="text-align:left;"> India </td>
+<td style="text-align:left;font-weight: bold;"> 25 </td>
+   <td style="text-align:left;font-weight: bold;"> India </td>
    <td style="text-align:left;"> 0.624 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 26 </td>
-   <td style="text-align:left;"> Bhutan </td>
+<td style="text-align:left;font-weight: bold;"> 26 </td>
+   <td style="text-align:left;font-weight: bold;"> Bhutan </td>
    <td style="text-align:left;"> 0.607 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 27 </td>
-   <td style="text-align:left;"> Timor Leste </td>
+<td style="text-align:left;font-weight: bold;"> 27 </td>
+   <td style="text-align:left;font-weight: bold;"> Timor Leste </td>
    <td style="text-align:left;"> 0.605 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 28 </td>
-   <td style="text-align:left;"> Vanuatu </td>
+<td style="text-align:left;font-weight: bold;"> 28 </td>
+   <td style="text-align:left;font-weight: bold;"> Vanuatu </td>
    <td style="text-align:left;"> 0.597 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 29 </td>
-   <td style="text-align:left;"> Congo, Republic of the </td>
+<td style="text-align:left;font-weight: bold;"> 29 </td>
+   <td style="text-align:left;font-weight: bold;"> Congo, Republic of the </td>
    <td style="text-align:left;"> 0.592 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 30 </td>
-   <td style="text-align:left;"> Equatorial Guinea </td>
+<td style="text-align:left;font-weight: bold;"> 30 </td>
+   <td style="text-align:left;font-weight: bold;"> Equatorial Guinea </td>
    <td style="text-align:left;"> 0.592 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 31 </td>
-   <td style="text-align:left;"> Kiribati </td>
+<td style="text-align:left;font-weight: bold;"> 31 </td>
+   <td style="text-align:left;font-weight: bold;"> Kiribati </td>
    <td style="text-align:left;"> 0.588 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 32 </td>
-   <td style="text-align:left;"> Laos </td>
+<td style="text-align:left;font-weight: bold;"> 32 </td>
+   <td style="text-align:left;font-weight: bold;"> Laos </td>
    <td style="text-align:left;"> 0.586 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 33 </td>
-   <td style="text-align:left;"> Bangladesh </td>
+<td style="text-align:left;font-weight: bold;"> 33 </td>
+   <td style="text-align:left;font-weight: bold;"> Bangladesh </td>
    <td style="text-align:left;"> 0.579 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 34 </td>
-   <td style="text-align:left;"> Ghana </td>
+<td style="text-align:left;font-weight: bold;"> 34 </td>
+   <td style="text-align:left;font-weight: bold;"> Ghana </td>
    <td style="text-align:left;"> 0.579 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 35 </td>
-   <td style="text-align:left;"> Zambia </td>
+<td style="text-align:left;font-weight: bold;"> 35 </td>
+   <td style="text-align:left;font-weight: bold;"> Zambia </td>
    <td style="text-align:left;"> 0.579 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 36 </td>
-   <td style="text-align:left;"> São Tomé and Príncipe </td>
+<td style="text-align:left;font-weight: bold;"> 36 </td>
+   <td style="text-align:left;font-weight: bold;"> São Tomé and Príncipe </td>
    <td style="text-align:left;"> 0.574 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 37 </td>
-   <td style="text-align:left;"> Cambodia </td>
+<td style="text-align:left;font-weight: bold;"> 37 </td>
+   <td style="text-align:left;font-weight: bold;"> Cambodia </td>
    <td style="text-align:left;"> 0.563 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 38 </td>
-   <td style="text-align:left;"> Nepal </td>
+<td style="text-align:left;font-weight: bold;"> 38 </td>
+   <td style="text-align:left;font-weight: bold;"> Nepal </td>
    <td style="text-align:left;"> 0.558 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 39 </td>
-   <td style="text-align:left;"> Myanmar </td>
+<td style="text-align:left;font-weight: bold;"> 39 </td>
+   <td style="text-align:left;font-weight: bold;"> Myanmar </td>
    <td style="text-align:left;"> 0.556 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 40 </td>
-   <td style="text-align:left;"> Kenya </td>
+<td style="text-align:left;font-weight: bold;"> 40 </td>
+   <td style="text-align:left;font-weight: bold;"> Kenya </td>
    <td style="text-align:left;"> 0.555 </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 41 </td>
-   <td style="text-align:left;"> Pakistan </td>
+<td style="text-align:left;font-weight: bold;"> 41 </td>
+   <td style="text-align:left;font-weight: bold;"> Pakistan </td>
    <td style="text-align:left;"> 0.550 </td>
   </tr>
 </tbody>
@@ -906,8 +871,9 @@ kable(third_table[,1:2], "html", caption = "Medium Human Development", row.names
 
 
 ```r
-kable(fourth_table, "html", caption = "Low Human Development", row.names=TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+kable(fourth_table[,1:2], "html", caption = "Low Human Development", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
+  column_spec(1:2, bold = T) 
 ```
 
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
@@ -916,264 +882,230 @@ kable(fourth_table, "html", caption = "Low Human Development", row.names=TRUE) %
 <th style="text-align:left;">   </th>
    <th style="text-align:left;"> Country </th>
    <th style="text-align:left;"> HDI </th>
-   <th style="text-align:left;"> HDI_Category </th>
   </tr></thead>
 <tbody>
 <tr>
-<td style="text-align:left;"> 1 </td>
-   <td style="text-align:left;"> Swaziland </td>
+<td style="text-align:left;font-weight: bold;"> 1 </td>
+   <td style="text-align:left;font-weight: bold;"> Swaziland </td>
    <td style="text-align:left;"> 0.541 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 2 </td>
-   <td style="text-align:left;"> Syria </td>
+<td style="text-align:left;font-weight: bold;"> 2 </td>
+   <td style="text-align:left;font-weight: bold;"> Syria </td>
    <td style="text-align:left;"> 0.536 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 3 </td>
-   <td style="text-align:left;"> Angola </td>
+<td style="text-align:left;font-weight: bold;"> 3 </td>
+   <td style="text-align:left;font-weight: bold;"> Angola </td>
    <td style="text-align:left;"> 0.533 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 4 </td>
-   <td style="text-align:left;"> Tanzania </td>
+<td style="text-align:left;font-weight: bold;"> 4 </td>
+   <td style="text-align:left;font-weight: bold;"> Tanzania </td>
    <td style="text-align:left;"> 0.531 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 5 </td>
-   <td style="text-align:left;"> Nigeria </td>
+<td style="text-align:left;font-weight: bold;"> 5 </td>
+   <td style="text-align:left;font-weight: bold;"> Nigeria </td>
    <td style="text-align:left;"> 0.527 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 6 </td>
-   <td style="text-align:left;"> Cameroon </td>
+<td style="text-align:left;font-weight: bold;"> 6 </td>
+   <td style="text-align:left;font-weight: bold;"> Cameroon </td>
    <td style="text-align:left;"> 0.518 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 7 </td>
-   <td style="text-align:left;"> Papua New Guinea </td>
+<td style="text-align:left;font-weight: bold;"> 7 </td>
+   <td style="text-align:left;font-weight: bold;"> Papua New Guinea </td>
    <td style="text-align:left;"> 0.516 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 8 </td>
-   <td style="text-align:left;"> Zimbabwe </td>
+<td style="text-align:left;font-weight: bold;"> 8 </td>
+   <td style="text-align:left;font-weight: bold;"> Zimbabwe </td>
    <td style="text-align:left;"> 0.516 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 9 </td>
-   <td style="text-align:left;"> Solomon Islands </td>
+<td style="text-align:left;font-weight: bold;"> 9 </td>
+   <td style="text-align:left;font-weight: bold;"> Solomon Islands </td>
    <td style="text-align:left;"> 0.515 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 10 </td>
-   <td style="text-align:left;"> Mauritania </td>
+<td style="text-align:left;font-weight: bold;"> 10 </td>
+   <td style="text-align:left;font-weight: bold;"> Mauritania </td>
    <td style="text-align:left;"> 0.513 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 11 </td>
-   <td style="text-align:left;"> Madagascar </td>
+<td style="text-align:left;font-weight: bold;"> 11 </td>
+   <td style="text-align:left;font-weight: bold;"> Madagascar </td>
    <td style="text-align:left;"> 0.512 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 12 </td>
-   <td style="text-align:left;"> Rwanda </td>
+<td style="text-align:left;font-weight: bold;"> 12 </td>
+   <td style="text-align:left;font-weight: bold;"> Rwanda </td>
    <td style="text-align:left;"> 0.498 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 13 </td>
-   <td style="text-align:left;"> Comoros </td>
+<td style="text-align:left;font-weight: bold;"> 13 </td>
+   <td style="text-align:left;font-weight: bold;"> Comoros </td>
    <td style="text-align:left;"> 0.497 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 14 </td>
-   <td style="text-align:left;"> Lesotho </td>
+<td style="text-align:left;font-weight: bold;"> 14 </td>
+   <td style="text-align:left;font-weight: bold;"> Lesotho </td>
    <td style="text-align:left;"> 0.497 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 15 </td>
-   <td style="text-align:left;"> Senegal </td>
+<td style="text-align:left;font-weight: bold;"> 15 </td>
+   <td style="text-align:left;font-weight: bold;"> Senegal </td>
    <td style="text-align:left;"> 0.494 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 16 </td>
-   <td style="text-align:left;"> Haiti </td>
+<td style="text-align:left;font-weight: bold;"> 16 </td>
+   <td style="text-align:left;font-weight: bold;"> Haiti </td>
    <td style="text-align:left;"> 0.493 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 17 </td>
-   <td style="text-align:left;"> Uganda </td>
+<td style="text-align:left;font-weight: bold;"> 17 </td>
+   <td style="text-align:left;font-weight: bold;"> Uganda </td>
    <td style="text-align:left;"> 0.493 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 18 </td>
-   <td style="text-align:left;"> Sudan </td>
+<td style="text-align:left;font-weight: bold;"> 18 </td>
+   <td style="text-align:left;font-weight: bold;"> Sudan </td>
    <td style="text-align:left;"> 0.490 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 19 </td>
-   <td style="text-align:left;"> Togo </td>
+<td style="text-align:left;font-weight: bold;"> 19 </td>
+   <td style="text-align:left;font-weight: bold;"> Togo </td>
    <td style="text-align:left;"> 0.487 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 20 </td>
-   <td style="text-align:left;"> Benin </td>
+<td style="text-align:left;font-weight: bold;"> 20 </td>
+   <td style="text-align:left;font-weight: bold;"> Benin </td>
    <td style="text-align:left;"> 0.485 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 21 </td>
-   <td style="text-align:left;"> Yemen </td>
+<td style="text-align:left;font-weight: bold;"> 21 </td>
+   <td style="text-align:left;font-weight: bold;"> Yemen </td>
    <td style="text-align:left;"> 0.482 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 22 </td>
-   <td style="text-align:left;"> Afghanistan </td>
+<td style="text-align:left;font-weight: bold;"> 22 </td>
+   <td style="text-align:left;font-weight: bold;"> Afghanistan </td>
    <td style="text-align:left;"> 0.479 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 23 </td>
-   <td style="text-align:left;"> Malawi </td>
+<td style="text-align:left;font-weight: bold;"> 23 </td>
+   <td style="text-align:left;font-weight: bold;"> Malawi </td>
    <td style="text-align:left;"> 0.476 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 24 </td>
-   <td style="text-align:left;"> Côte d'Ivoire </td>
+<td style="text-align:left;font-weight: bold;"> 24 </td>
+   <td style="text-align:left;font-weight: bold;"> Côte d'Ivoire </td>
    <td style="text-align:left;"> 0.474 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 25 </td>
-   <td style="text-align:left;"> Djibouti </td>
+<td style="text-align:left;font-weight: bold;"> 25 </td>
+   <td style="text-align:left;font-weight: bold;"> Djibouti </td>
    <td style="text-align:left;"> 0.473 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 26 </td>
-   <td style="text-align:left;"> Gambia </td>
+<td style="text-align:left;font-weight: bold;"> 26 </td>
+   <td style="text-align:left;font-weight: bold;"> Gambia </td>
    <td style="text-align:left;"> 0.452 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 27 </td>
-   <td style="text-align:left;"> Ethiopia </td>
+<td style="text-align:left;font-weight: bold;"> 27 </td>
+   <td style="text-align:left;font-weight: bold;"> Ethiopia </td>
    <td style="text-align:left;"> 0.448 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 28 </td>
-   <td style="text-align:left;"> Mali </td>
+<td style="text-align:left;font-weight: bold;"> 28 </td>
+   <td style="text-align:left;font-weight: bold;"> Mali </td>
    <td style="text-align:left;"> 0.442 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 29 </td>
-   <td style="text-align:left;"> Congo, Democratic Republic of the </td>
+<td style="text-align:left;font-weight: bold;"> 29 </td>
+   <td style="text-align:left;font-weight: bold;"> Congo, Democratic Republic of the </td>
    <td style="text-align:left;"> 0.435 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 30 </td>
-   <td style="text-align:left;"> Liberia </td>
+<td style="text-align:left;font-weight: bold;"> 30 </td>
+   <td style="text-align:left;font-weight: bold;"> Liberia </td>
    <td style="text-align:left;"> 0.427 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 31 </td>
-   <td style="text-align:left;"> Guinea Bissau </td>
+<td style="text-align:left;font-weight: bold;"> 31 </td>
+   <td style="text-align:left;font-weight: bold;"> Guinea Bissau </td>
    <td style="text-align:left;"> 0.424 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 32 </td>
-   <td style="text-align:left;"> Eritrea </td>
+<td style="text-align:left;font-weight: bold;"> 32 </td>
+   <td style="text-align:left;font-weight: bold;"> Eritrea </td>
    <td style="text-align:left;"> 0.420 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 33 </td>
-   <td style="text-align:left;"> Sierra Leone </td>
+<td style="text-align:left;font-weight: bold;"> 33 </td>
+   <td style="text-align:left;font-weight: bold;"> Sierra Leone </td>
    <td style="text-align:left;"> 0.420 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 34 </td>
-   <td style="text-align:left;"> Mozambique </td>
+<td style="text-align:left;font-weight: bold;"> 34 </td>
+   <td style="text-align:left;font-weight: bold;"> Mozambique </td>
    <td style="text-align:left;"> 0.418 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 35 </td>
-   <td style="text-align:left;"> South Sudan </td>
+<td style="text-align:left;font-weight: bold;"> 35 </td>
+   <td style="text-align:left;font-weight: bold;"> South Sudan </td>
    <td style="text-align:left;"> 0.418 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 36 </td>
-   <td style="text-align:left;"> Guinea </td>
+<td style="text-align:left;font-weight: bold;"> 36 </td>
+   <td style="text-align:left;font-weight: bold;"> Guinea </td>
    <td style="text-align:left;"> 0.414 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 37 </td>
-   <td style="text-align:left;"> Burundi </td>
+<td style="text-align:left;font-weight: bold;"> 37 </td>
+   <td style="text-align:left;font-weight: bold;"> Burundi </td>
    <td style="text-align:left;"> 0.404 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 38 </td>
-   <td style="text-align:left;"> Burkina Faso </td>
+<td style="text-align:left;font-weight: bold;"> 38 </td>
+   <td style="text-align:left;font-weight: bold;"> Burkina Faso </td>
    <td style="text-align:left;"> 0.402 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 39 </td>
-   <td style="text-align:left;"> Chad </td>
+<td style="text-align:left;font-weight: bold;"> 39 </td>
+   <td style="text-align:left;font-weight: bold;"> Chad </td>
    <td style="text-align:left;"> 0.396 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 40 </td>
-   <td style="text-align:left;"> Niger </td>
+<td style="text-align:left;font-weight: bold;"> 40 </td>
+   <td style="text-align:left;font-weight: bold;"> Niger </td>
    <td style="text-align:left;"> 0.353 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 41 </td>
-   <td style="text-align:left;"> Central African Republic </td>
+<td style="text-align:left;font-weight: bold;"> 41 </td>
+   <td style="text-align:left;font-weight: bold;"> Central African Republic </td>
    <td style="text-align:left;"> 0.352 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 </tbody>
 </table>
+</div>
+
 
 ## Main Table - all nations, highlighted
 
+<div class="col3">
 
 ```r
-kable(main_table, "html", caption = "Low Human Development", row.names=TRUE) %>%
+kable(main_table[,1:2], "html", caption = "Low Human Development", row.names=TRUE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
+  column_spec(1:2, bold = T) %>%
+  group_rows("Group 1 - Very High Human Development", 1, 51) %>%
+  group_rows("Group 2 - High Human Development", 52, 106) %>%
+  group_rows("Group 3 - Medium Human Development", 107, 147) %>%
+  group_rows("Group 4 - Low Human Development", 148, 188) %>%
   row_spec(c(1, 51, 52, 105, 107, 147, 148, 188), bold = T, color = "white", background = "#D7261E")
 ```
 
@@ -1183,1139 +1115,955 @@ kable(main_table, "html", caption = "Low Human Development", row.names=TRUE) %>%
 <th style="text-align:left;">   </th>
    <th style="text-align:left;"> Country </th>
    <th style="text-align:left;"> HDI </th>
-   <th style="text-align:left;"> HDI_Category </th>
   </tr></thead>
 <tbody>
+<tr grouplength="51"><td colspan="3" style="border-bottom: 1px solid;"><strong>Group 1 - Very High Human Development</strong></td></tr>
 <tr>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 1 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> Norway </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1"> 1 </td>
+   <td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;"> Norway </td>
    <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 0.949 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 2 </td>
-   <td style="text-align:left;"> Australia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 2 </td>
+   <td style="text-align:left;font-weight: bold;"> Australia </td>
    <td style="text-align:left;"> 0.939 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 3 </td>
-   <td style="text-align:left;"> Switzerland </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 3 </td>
+   <td style="text-align:left;font-weight: bold;"> Switzerland </td>
    <td style="text-align:left;"> 0.939 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 4 </td>
-   <td style="text-align:left;"> Germany </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 4 </td>
+   <td style="text-align:left;font-weight: bold;"> Germany </td>
    <td style="text-align:left;"> 0.926 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 5 </td>
-   <td style="text-align:left;"> Denmark </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 5 </td>
+   <td style="text-align:left;font-weight: bold;"> Denmark </td>
    <td style="text-align:left;"> 0.925 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 6 </td>
-   <td style="text-align:left;"> Singapore </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 6 </td>
+   <td style="text-align:left;font-weight: bold;"> Singapore </td>
    <td style="text-align:left;"> 0.925 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 7 </td>
-   <td style="text-align:left;"> Netherlands </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 7 </td>
+   <td style="text-align:left;font-weight: bold;"> Netherlands </td>
    <td style="text-align:left;"> 0.924 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 8 </td>
-   <td style="text-align:left;"> Ireland </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 8 </td>
+   <td style="text-align:left;font-weight: bold;"> Ireland </td>
    <td style="text-align:left;"> 0.923 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 9 </td>
-   <td style="text-align:left;"> Iceland </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 9 </td>
+   <td style="text-align:left;font-weight: bold;"> Iceland </td>
    <td style="text-align:left;"> 0.921 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 10 </td>
-   <td style="text-align:left;"> Canada </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 10 </td>
+   <td style="text-align:left;font-weight: bold;"> Canada </td>
    <td style="text-align:left;"> 0.920 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 11 </td>
-   <td style="text-align:left;"> United States </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 11 </td>
+   <td style="text-align:left;font-weight: bold;"> United States </td>
    <td style="text-align:left;"> 0.920 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 12 </td>
-   <td style="text-align:left;"> Hong Kong </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 12 </td>
+   <td style="text-align:left;font-weight: bold;"> Hong Kong </td>
    <td style="text-align:left;"> 0.917 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 13 </td>
-   <td style="text-align:left;"> New Zealand </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 13 </td>
+   <td style="text-align:left;font-weight: bold;"> New Zealand </td>
    <td style="text-align:left;"> 0.915 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 14 </td>
-   <td style="text-align:left;"> Sweden </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 14 </td>
+   <td style="text-align:left;font-weight: bold;"> Sweden </td>
    <td style="text-align:left;"> 0.913 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 15 </td>
-   <td style="text-align:left;"> Liechtenstein </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 15 </td>
+   <td style="text-align:left;font-weight: bold;"> Liechtenstein </td>
    <td style="text-align:left;"> 0.912 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 16 </td>
-   <td style="text-align:left;"> United Kingdom </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 16 </td>
+   <td style="text-align:left;font-weight: bold;"> United Kingdom </td>
    <td style="text-align:left;"> 0.909 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 17 </td>
-   <td style="text-align:left;"> Japan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 17 </td>
+   <td style="text-align:left;font-weight: bold;"> Japan </td>
    <td style="text-align:left;"> 0.903 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 18 </td>
-   <td style="text-align:left;"> South Korea </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 18 </td>
+   <td style="text-align:left;font-weight: bold;"> South Korea </td>
    <td style="text-align:left;"> 0.901 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 19 </td>
-   <td style="text-align:left;"> Israel </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 19 </td>
+   <td style="text-align:left;font-weight: bold;"> Israel </td>
    <td style="text-align:left;"> 0.899 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 20 </td>
-   <td style="text-align:left;"> Luxembourg </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 20 </td>
+   <td style="text-align:left;font-weight: bold;"> Luxembourg </td>
    <td style="text-align:left;"> 0.898 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 21 </td>
-   <td style="text-align:left;"> France </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 21 </td>
+   <td style="text-align:left;font-weight: bold;"> France </td>
    <td style="text-align:left;"> 0.897 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 22 </td>
-   <td style="text-align:left;"> Belgium </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 22 </td>
+   <td style="text-align:left;font-weight: bold;"> Belgium </td>
    <td style="text-align:left;"> 0.896 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 23 </td>
-   <td style="text-align:left;"> Finland </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 23 </td>
+   <td style="text-align:left;font-weight: bold;"> Finland </td>
    <td style="text-align:left;"> 0.895 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 24 </td>
-   <td style="text-align:left;"> Austria </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 24 </td>
+   <td style="text-align:left;font-weight: bold;"> Austria </td>
    <td style="text-align:left;"> 0.893 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 25 </td>
-   <td style="text-align:left;"> Slovenia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 25 </td>
+   <td style="text-align:left;font-weight: bold;"> Slovenia </td>
    <td style="text-align:left;"> 0.890 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 26 </td>
-   <td style="text-align:left;"> Italy </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 26 </td>
+   <td style="text-align:left;font-weight: bold;"> Italy </td>
    <td style="text-align:left;"> 0.887 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 27 </td>
-   <td style="text-align:left;"> Spain </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 27 </td>
+   <td style="text-align:left;font-weight: bold;"> Spain </td>
    <td style="text-align:left;"> 0.884 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 28 </td>
-   <td style="text-align:left;"> Czech Republic </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 28 </td>
+   <td style="text-align:left;font-weight: bold;"> Czech Republic </td>
    <td style="text-align:left;"> 0.878 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 29 </td>
-   <td style="text-align:left;"> Greece </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 29 </td>
+   <td style="text-align:left;font-weight: bold;"> Greece </td>
    <td style="text-align:left;"> 0.866 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 30 </td>
-   <td style="text-align:left;"> Brunei </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 30 </td>
+   <td style="text-align:left;font-weight: bold;"> Brunei </td>
    <td style="text-align:left;"> 0.865 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 31 </td>
-   <td style="text-align:left;"> Estonia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 31 </td>
+   <td style="text-align:left;font-weight: bold;"> Estonia </td>
    <td style="text-align:left;"> 0.865 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 32 </td>
-   <td style="text-align:left;"> Andorra </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 32 </td>
+   <td style="text-align:left;font-weight: bold;"> Andorra </td>
    <td style="text-align:left;"> 0.858 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 33 </td>
-   <td style="text-align:left;"> Cyprus </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 33 </td>
+   <td style="text-align:left;font-weight: bold;"> Cyprus </td>
    <td style="text-align:left;"> 0.856 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 34 </td>
-   <td style="text-align:left;"> Malta </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 34 </td>
+   <td style="text-align:left;font-weight: bold;"> Malta </td>
    <td style="text-align:left;"> 0.856 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 35 </td>
-   <td style="text-align:left;"> Qatar </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 35 </td>
+   <td style="text-align:left;font-weight: bold;"> Qatar </td>
    <td style="text-align:left;"> 0.856 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 36 </td>
-   <td style="text-align:left;"> Poland </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 36 </td>
+   <td style="text-align:left;font-weight: bold;"> Poland </td>
    <td style="text-align:left;"> 0.855 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 37 </td>
-   <td style="text-align:left;"> Lithuania </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 37 </td>
+   <td style="text-align:left;font-weight: bold;"> Lithuania </td>
    <td style="text-align:left;"> 0.848 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 38 </td>
-   <td style="text-align:left;"> Chile </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 38 </td>
+   <td style="text-align:left;font-weight: bold;"> Chile </td>
    <td style="text-align:left;"> 0.847 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 39 </td>
-   <td style="text-align:left;"> Saudi Arabia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 39 </td>
+   <td style="text-align:left;font-weight: bold;"> Saudi Arabia </td>
    <td style="text-align:left;"> 0.847 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 40 </td>
-   <td style="text-align:left;"> Slovakia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 40 </td>
+   <td style="text-align:left;font-weight: bold;"> Slovakia </td>
    <td style="text-align:left;"> 0.845 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 41 </td>
-   <td style="text-align:left;"> Portugal </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 41 </td>
+   <td style="text-align:left;font-weight: bold;"> Portugal </td>
    <td style="text-align:left;"> 0.843 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 42 </td>
-   <td style="text-align:left;"> United Arab Emirates </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 42 </td>
+   <td style="text-align:left;font-weight: bold;"> United Arab Emirates </td>
    <td style="text-align:left;"> 0.840 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 43 </td>
-   <td style="text-align:left;"> Hungary </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 43 </td>
+   <td style="text-align:left;font-weight: bold;"> Hungary </td>
    <td style="text-align:left;"> 0.836 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 44 </td>
-   <td style="text-align:left;"> Latvia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 44 </td>
+   <td style="text-align:left;font-weight: bold;"> Latvia </td>
    <td style="text-align:left;"> 0.830 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 45 </td>
-   <td style="text-align:left;"> Argentina </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 45 </td>
+   <td style="text-align:left;font-weight: bold;"> Argentina </td>
    <td style="text-align:left;"> 0.827 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 46 </td>
-   <td style="text-align:left;"> Croatia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 46 </td>
+   <td style="text-align:left;font-weight: bold;"> Croatia </td>
    <td style="text-align:left;"> 0.827 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 47 </td>
-   <td style="text-align:left;"> Bahrain </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 47 </td>
+   <td style="text-align:left;font-weight: bold;"> Bahrain </td>
    <td style="text-align:left;"> 0.824 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 48 </td>
-   <td style="text-align:left;"> Montenegro </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 48 </td>
+   <td style="text-align:left;font-weight: bold;"> Montenegro </td>
    <td style="text-align:left;"> 0.807 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 49 </td>
-   <td style="text-align:left;"> Russia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 49 </td>
+   <td style="text-align:left;font-weight: bold;"> Russia </td>
    <td style="text-align:left;"> 0.804 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 50 </td>
-   <td style="text-align:left;"> Romania </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 50 </td>
+   <td style="text-align:left;font-weight: bold;"> Romania </td>
    <td style="text-align:left;"> 0.802 </td>
-   <td style="text-align:left;"> very high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 51 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> Kuwait </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1"> 51 </td>
+   <td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;"> Kuwait </td>
    <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 0.800 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> very high human development </td>
   </tr>
+<tr grouplength="55"><td colspan="3" style="border-bottom: 1px solid;"><strong>Group 2 - High Human Development</strong></td></tr>
 <tr>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 52 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> Belarus </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1"> 52 </td>
+   <td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;"> Belarus </td>
    <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 0.796 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 53 </td>
-   <td style="text-align:left;"> Oman </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 53 </td>
+   <td style="text-align:left;font-weight: bold;"> Oman </td>
    <td style="text-align:left;"> 0.796 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 54 </td>
-   <td style="text-align:left;"> Barbados </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 54 </td>
+   <td style="text-align:left;font-weight: bold;"> Barbados </td>
    <td style="text-align:left;"> 0.795 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 55 </td>
-   <td style="text-align:left;"> Uruguay </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 55 </td>
+   <td style="text-align:left;font-weight: bold;"> Uruguay </td>
    <td style="text-align:left;"> 0.795 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 56 </td>
-   <td style="text-align:left;"> Bulgaria </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 56 </td>
+   <td style="text-align:left;font-weight: bold;"> Bulgaria </td>
    <td style="text-align:left;"> 0.794 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 57 </td>
-   <td style="text-align:left;"> Kazakhstan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 57 </td>
+   <td style="text-align:left;font-weight: bold;"> Kazakhstan </td>
    <td style="text-align:left;"> 0.794 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 58 </td>
-   <td style="text-align:left;"> Bahamas </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 58 </td>
+   <td style="text-align:left;font-weight: bold;"> Bahamas </td>
    <td style="text-align:left;"> 0.792 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 59 </td>
-   <td style="text-align:left;"> Malaysia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 59 </td>
+   <td style="text-align:left;font-weight: bold;"> Malaysia </td>
    <td style="text-align:left;"> 0.789 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 60 </td>
-   <td style="text-align:left;"> Palau </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 60 </td>
+   <td style="text-align:left;font-weight: bold;"> Palau </td>
    <td style="text-align:left;"> 0.788 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 61 </td>
-   <td style="text-align:left;"> Panama </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 61 </td>
+   <td style="text-align:left;font-weight: bold;"> Panama </td>
    <td style="text-align:left;"> 0.788 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 62 </td>
-   <td style="text-align:left;"> Antigua and Barbuda </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 62 </td>
+   <td style="text-align:left;font-weight: bold;"> Antigua and Barbuda </td>
    <td style="text-align:left;"> 0.786 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 63 </td>
-   <td style="text-align:left;"> Seychelles </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 63 </td>
+   <td style="text-align:left;font-weight: bold;"> Seychelles </td>
    <td style="text-align:left;"> 0.782 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 64 </td>
-   <td style="text-align:left;"> Mauritius </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 64 </td>
+   <td style="text-align:left;font-weight: bold;"> Mauritius </td>
    <td style="text-align:left;"> 0.781 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 65 </td>
-   <td style="text-align:left;"> Trinidad and Tobago </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 65 </td>
+   <td style="text-align:left;font-weight: bold;"> Trinidad and Tobago </td>
    <td style="text-align:left;"> 0.780 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 66 </td>
-   <td style="text-align:left;"> Costa Rica </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 66 </td>
+   <td style="text-align:left;font-weight: bold;"> Costa Rica </td>
    <td style="text-align:left;"> 0.776 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 67 </td>
-   <td style="text-align:left;"> Serbia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 67 </td>
+   <td style="text-align:left;font-weight: bold;"> Serbia </td>
    <td style="text-align:left;"> 0.776 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 68 </td>
-   <td style="text-align:left;"> Cuba </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 68 </td>
+   <td style="text-align:left;font-weight: bold;"> Cuba </td>
    <td style="text-align:left;"> 0.775 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 69 </td>
-   <td style="text-align:left;"> Iran </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 69 </td>
+   <td style="text-align:left;font-weight: bold;"> Iran </td>
    <td style="text-align:left;"> 0.774 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 70 </td>
-   <td style="text-align:left;"> Georgia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 70 </td>
+   <td style="text-align:left;font-weight: bold;"> Georgia </td>
    <td style="text-align:left;"> 0.769 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 71 </td>
-   <td style="text-align:left;"> Turkey </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 71 </td>
+   <td style="text-align:left;font-weight: bold;"> Turkey </td>
    <td style="text-align:left;"> 0.767 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 72 </td>
-   <td style="text-align:left;"> Venezuela </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 72 </td>
+   <td style="text-align:left;font-weight: bold;"> Venezuela </td>
    <td style="text-align:left;"> 0.767 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 73 </td>
-   <td style="text-align:left;"> Sri Lanka </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 73 </td>
+   <td style="text-align:left;font-weight: bold;"> Sri Lanka </td>
    <td style="text-align:left;"> 0.766 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 74 </td>
-   <td style="text-align:left;"> Saint Kitts and Nevis </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 74 </td>
+   <td style="text-align:left;font-weight: bold;"> Saint Kitts and Nevis </td>
    <td style="text-align:left;"> 0.765 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 75 </td>
-   <td style="text-align:left;"> Albania </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 75 </td>
+   <td style="text-align:left;font-weight: bold;"> Albania </td>
    <td style="text-align:left;"> 0.764 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 76 </td>
-   <td style="text-align:left;"> Lebanon </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 76 </td>
+   <td style="text-align:left;font-weight: bold;"> Lebanon </td>
    <td style="text-align:left;"> 0.763 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 77 </td>
-   <td style="text-align:left;"> Mexico </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 77 </td>
+   <td style="text-align:left;font-weight: bold;"> Mexico </td>
    <td style="text-align:left;"> 0.762 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 78 </td>
-   <td style="text-align:left;"> Azerbaijan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 78 </td>
+   <td style="text-align:left;font-weight: bold;"> Azerbaijan </td>
    <td style="text-align:left;"> 0.759 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 79 </td>
-   <td style="text-align:left;"> Brazil </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 79 </td>
+   <td style="text-align:left;font-weight: bold;"> Brazil </td>
    <td style="text-align:left;"> 0.754 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 80 </td>
-   <td style="text-align:left;"> Grenada </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 80 </td>
+   <td style="text-align:left;font-weight: bold;"> Grenada </td>
    <td style="text-align:left;"> 0.754 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 81 </td>
-   <td style="text-align:left;"> Bosnia and Herzegovina </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 81 </td>
+   <td style="text-align:left;font-weight: bold;"> Bosnia and Herzegovina </td>
    <td style="text-align:left;"> 0.750 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 82 </td>
-   <td style="text-align:left;"> Macedonia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 82 </td>
+   <td style="text-align:left;font-weight: bold;"> Macedonia </td>
    <td style="text-align:left;"> 0.748 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 83 </td>
-   <td style="text-align:left;"> Algeria </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 83 </td>
+   <td style="text-align:left;font-weight: bold;"> Algeria </td>
    <td style="text-align:left;"> 0.745 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 84 </td>
-   <td style="text-align:left;"> Armenia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 84 </td>
+   <td style="text-align:left;font-weight: bold;"> Armenia </td>
    <td style="text-align:left;"> 0.743 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 85 </td>
-   <td style="text-align:left;"> Ukraine </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 85 </td>
+   <td style="text-align:left;font-weight: bold;"> Ukraine </td>
    <td style="text-align:left;"> 0.743 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 86 </td>
-   <td style="text-align:left;"> Jordan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 86 </td>
+   <td style="text-align:left;font-weight: bold;"> Jordan </td>
    <td style="text-align:left;"> 0.741 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 87 </td>
-   <td style="text-align:left;"> Peru </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 87 </td>
+   <td style="text-align:left;font-weight: bold;"> Peru </td>
    <td style="text-align:left;"> 0.740 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 88 </td>
-   <td style="text-align:left;"> Thailand </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 88 </td>
+   <td style="text-align:left;font-weight: bold;"> Thailand </td>
    <td style="text-align:left;"> 0.740 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 89 </td>
-   <td style="text-align:left;"> Ecuador </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 89 </td>
+   <td style="text-align:left;font-weight: bold;"> Ecuador </td>
    <td style="text-align:left;"> 0.739 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 90 </td>
-   <td style="text-align:left;"> China </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 90 </td>
+   <td style="text-align:left;font-weight: bold;"> China </td>
    <td style="text-align:left;"> 0.738 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 91 </td>
-   <td style="text-align:left;"> Fiji </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 91 </td>
+   <td style="text-align:left;font-weight: bold;"> Fiji </td>
    <td style="text-align:left;"> 0.736 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 92 </td>
-   <td style="text-align:left;"> Mongolia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 92 </td>
+   <td style="text-align:left;font-weight: bold;"> Mongolia </td>
    <td style="text-align:left;"> 0.735 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 93 </td>
-   <td style="text-align:left;"> Saint Lucia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 93 </td>
+   <td style="text-align:left;font-weight: bold;"> Saint Lucia </td>
    <td style="text-align:left;"> 0.735 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 94 </td>
-   <td style="text-align:left;"> Jamaica </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 94 </td>
+   <td style="text-align:left;font-weight: bold;"> Jamaica </td>
    <td style="text-align:left;"> 0.730 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 95 </td>
-   <td style="text-align:left;"> Colombia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 95 </td>
+   <td style="text-align:left;font-weight: bold;"> Colombia </td>
    <td style="text-align:left;"> 0.727 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 96 </td>
-   <td style="text-align:left;"> Dominica </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 96 </td>
+   <td style="text-align:left;font-weight: bold;"> Dominica </td>
    <td style="text-align:left;"> 0.726 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 97 </td>
-   <td style="text-align:left;"> Suriname </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 97 </td>
+   <td style="text-align:left;font-weight: bold;"> Suriname </td>
    <td style="text-align:left;"> 0.725 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 98 </td>
-   <td style="text-align:left;"> Tunisia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 98 </td>
+   <td style="text-align:left;font-weight: bold;"> Tunisia </td>
    <td style="text-align:left;"> 0.725 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 99 </td>
-   <td style="text-align:left;"> Dominican Republic </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 99 </td>
+   <td style="text-align:left;font-weight: bold;"> Dominican Republic </td>
    <td style="text-align:left;"> 0.722 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 100 </td>
-   <td style="text-align:left;"> Saint Vincent and the Grenadines </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 100 </td>
+   <td style="text-align:left;font-weight: bold;"> Saint Vincent and the Grenadines </td>
    <td style="text-align:left;"> 0.722 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 101 </td>
-   <td style="text-align:left;"> Tonga </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 101 </td>
+   <td style="text-align:left;font-weight: bold;"> Tonga </td>
    <td style="text-align:left;"> 0.721 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 102 </td>
-   <td style="text-align:left;"> Libya </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 102 </td>
+   <td style="text-align:left;font-weight: bold;"> Libya </td>
    <td style="text-align:left;"> 0.716 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 103 </td>
-   <td style="text-align:left;"> Belize </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 103 </td>
+   <td style="text-align:left;font-weight: bold;"> Belize </td>
    <td style="text-align:left;"> 0.706 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 104 </td>
-   <td style="text-align:left;"> Samoa </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 104 </td>
+   <td style="text-align:left;font-weight: bold;"> Samoa </td>
    <td style="text-align:left;"> 0.704 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 105 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> Maldives </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1"> 105 </td>
+   <td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;"> Maldives </td>
    <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 0.701 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> high human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 106 </td>
-   <td style="text-align:left;"> Uzbekistan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 106 </td>
+   <td style="text-align:left;font-weight: bold;"> Uzbekistan </td>
    <td style="text-align:left;"> 0.701 </td>
-   <td style="text-align:left;"> high human development </td>
   </tr>
+<tr grouplength="41"><td colspan="3" style="border-bottom: 1px solid;"><strong>Group 3 - Medium Human Development</strong></td></tr>
 <tr>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 107 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> Moldova </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1"> 107 </td>
+   <td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;"> Moldova </td>
    <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 0.699 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 108 </td>
-   <td style="text-align:left;"> Botswana </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 108 </td>
+   <td style="text-align:left;font-weight: bold;"> Botswana </td>
    <td style="text-align:left;"> 0.698 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 109 </td>
-   <td style="text-align:left;"> Gabon </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 109 </td>
+   <td style="text-align:left;font-weight: bold;"> Gabon </td>
    <td style="text-align:left;"> 0.697 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 110 </td>
-   <td style="text-align:left;"> Paraguay </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 110 </td>
+   <td style="text-align:left;font-weight: bold;"> Paraguay </td>
    <td style="text-align:left;"> 0.693 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 111 </td>
-   <td style="text-align:left;"> Egypt </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 111 </td>
+   <td style="text-align:left;font-weight: bold;"> Egypt </td>
    <td style="text-align:left;"> 0.691 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 112 </td>
-   <td style="text-align:left;"> Turkmenistan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 112 </td>
+   <td style="text-align:left;font-weight: bold;"> Turkmenistan </td>
    <td style="text-align:left;"> 0.691 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 113 </td>
-   <td style="text-align:left;"> Indonesia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 113 </td>
+   <td style="text-align:left;font-weight: bold;"> Indonesia </td>
    <td style="text-align:left;"> 0.689 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 114 </td>
-   <td style="text-align:left;"> Palestine </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 114 </td>
+   <td style="text-align:left;font-weight: bold;"> Palestine </td>
    <td style="text-align:left;"> 0.684 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 115 </td>
-   <td style="text-align:left;"> Vietnam </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 115 </td>
+   <td style="text-align:left;font-weight: bold;"> Vietnam </td>
    <td style="text-align:left;"> 0.683 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 116 </td>
-   <td style="text-align:left;"> Philippines </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 116 </td>
+   <td style="text-align:left;font-weight: bold;"> Philippines </td>
    <td style="text-align:left;"> 0.682 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 117 </td>
-   <td style="text-align:left;"> El Salvador </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 117 </td>
+   <td style="text-align:left;font-weight: bold;"> El Salvador </td>
    <td style="text-align:left;"> 0.680 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 118 </td>
-   <td style="text-align:left;"> Bolivia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 118 </td>
+   <td style="text-align:left;font-weight: bold;"> Bolivia </td>
    <td style="text-align:left;"> 0.674 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 119 </td>
-   <td style="text-align:left;"> South Africa </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 119 </td>
+   <td style="text-align:left;font-weight: bold;"> South Africa </td>
    <td style="text-align:left;"> 0.666 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 120 </td>
-   <td style="text-align:left;"> Kyrgyzstan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 120 </td>
+   <td style="text-align:left;font-weight: bold;"> Kyrgyzstan </td>
    <td style="text-align:left;"> 0.664 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 121 </td>
-   <td style="text-align:left;"> Iraq </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 121 </td>
+   <td style="text-align:left;font-weight: bold;"> Iraq </td>
    <td style="text-align:left;"> 0.649 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 122 </td>
-   <td style="text-align:left;"> Cape Verde </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 122 </td>
+   <td style="text-align:left;font-weight: bold;"> Cape Verde </td>
    <td style="text-align:left;"> 0.648 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 123 </td>
-   <td style="text-align:left;"> Morocco </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 123 </td>
+   <td style="text-align:left;font-weight: bold;"> Morocco </td>
    <td style="text-align:left;"> 0.647 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 124 </td>
-   <td style="text-align:left;"> Nicaragua </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 124 </td>
+   <td style="text-align:left;font-weight: bold;"> Nicaragua </td>
    <td style="text-align:left;"> 0.645 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 125 </td>
-   <td style="text-align:left;"> Guatemala </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 125 </td>
+   <td style="text-align:left;font-weight: bold;"> Guatemala </td>
    <td style="text-align:left;"> 0.640 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 126 </td>
-   <td style="text-align:left;"> Namibia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 126 </td>
+   <td style="text-align:left;font-weight: bold;"> Namibia </td>
    <td style="text-align:left;"> 0.640 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 127 </td>
-   <td style="text-align:left;"> Guyana </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 127 </td>
+   <td style="text-align:left;font-weight: bold;"> Guyana </td>
    <td style="text-align:left;"> 0.638 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 128 </td>
-   <td style="text-align:left;"> Micronesia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 128 </td>
+   <td style="text-align:left;font-weight: bold;"> Micronesia </td>
    <td style="text-align:left;"> 0.638 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 129 </td>
-   <td style="text-align:left;"> Tajikistan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 129 </td>
+   <td style="text-align:left;font-weight: bold;"> Tajikistan </td>
    <td style="text-align:left;"> 0.627 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 130 </td>
-   <td style="text-align:left;"> Honduras </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 130 </td>
+   <td style="text-align:left;font-weight: bold;"> Honduras </td>
    <td style="text-align:left;"> 0.625 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 131 </td>
-   <td style="text-align:left;"> India </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 131 </td>
+   <td style="text-align:left;font-weight: bold;"> India </td>
    <td style="text-align:left;"> 0.624 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 132 </td>
-   <td style="text-align:left;"> Bhutan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 132 </td>
+   <td style="text-align:left;font-weight: bold;"> Bhutan </td>
    <td style="text-align:left;"> 0.607 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 133 </td>
-   <td style="text-align:left;"> Timor Leste </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 133 </td>
+   <td style="text-align:left;font-weight: bold;"> Timor Leste </td>
    <td style="text-align:left;"> 0.605 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 134 </td>
-   <td style="text-align:left;"> Vanuatu </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 134 </td>
+   <td style="text-align:left;font-weight: bold;"> Vanuatu </td>
    <td style="text-align:left;"> 0.597 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 135 </td>
-   <td style="text-align:left;"> Congo, Republic of the </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 135 </td>
+   <td style="text-align:left;font-weight: bold;"> Congo, Republic of the </td>
    <td style="text-align:left;"> 0.592 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 136 </td>
-   <td style="text-align:left;"> Equatorial Guinea </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 136 </td>
+   <td style="text-align:left;font-weight: bold;"> Equatorial Guinea </td>
    <td style="text-align:left;"> 0.592 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 137 </td>
-   <td style="text-align:left;"> Kiribati </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 137 </td>
+   <td style="text-align:left;font-weight: bold;"> Kiribati </td>
    <td style="text-align:left;"> 0.588 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 138 </td>
-   <td style="text-align:left;"> Laos </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 138 </td>
+   <td style="text-align:left;font-weight: bold;"> Laos </td>
    <td style="text-align:left;"> 0.586 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 139 </td>
-   <td style="text-align:left;"> Bangladesh </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 139 </td>
+   <td style="text-align:left;font-weight: bold;"> Bangladesh </td>
    <td style="text-align:left;"> 0.579 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 140 </td>
-   <td style="text-align:left;"> Ghana </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 140 </td>
+   <td style="text-align:left;font-weight: bold;"> Ghana </td>
    <td style="text-align:left;"> 0.579 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 141 </td>
-   <td style="text-align:left;"> Zambia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 141 </td>
+   <td style="text-align:left;font-weight: bold;"> Zambia </td>
    <td style="text-align:left;"> 0.579 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 142 </td>
-   <td style="text-align:left;"> São Tomé and Príncipe </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 142 </td>
+   <td style="text-align:left;font-weight: bold;"> São Tomé and Príncipe </td>
    <td style="text-align:left;"> 0.574 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 143 </td>
-   <td style="text-align:left;"> Cambodia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 143 </td>
+   <td style="text-align:left;font-weight: bold;"> Cambodia </td>
    <td style="text-align:left;"> 0.563 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 144 </td>
-   <td style="text-align:left;"> Nepal </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 144 </td>
+   <td style="text-align:left;font-weight: bold;"> Nepal </td>
    <td style="text-align:left;"> 0.558 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 145 </td>
-   <td style="text-align:left;"> Myanmar </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 145 </td>
+   <td style="text-align:left;font-weight: bold;"> Myanmar </td>
    <td style="text-align:left;"> 0.556 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 146 </td>
-   <td style="text-align:left;"> Kenya </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 146 </td>
+   <td style="text-align:left;font-weight: bold;"> Kenya </td>
    <td style="text-align:left;"> 0.555 </td>
-   <td style="text-align:left;"> medium human development </td>
   </tr>
 <tr>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 147 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> Pakistan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1"> 147 </td>
+   <td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;"> Pakistan </td>
    <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 0.550 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> medium human development </td>
   </tr>
+<tr grouplength="41"><td colspan="3" style="border-bottom: 1px solid;"><strong>Group 4 - Low Human Development</strong></td></tr>
 <tr>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 148 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> Swaziland </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1"> 148 </td>
+   <td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;"> Swaziland </td>
    <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 0.541 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 149 </td>
-   <td style="text-align:left;"> Syria </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 149 </td>
+   <td style="text-align:left;font-weight: bold;"> Syria </td>
    <td style="text-align:left;"> 0.536 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 150 </td>
-   <td style="text-align:left;"> Angola </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 150 </td>
+   <td style="text-align:left;font-weight: bold;"> Angola </td>
    <td style="text-align:left;"> 0.533 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 151 </td>
-   <td style="text-align:left;"> Tanzania </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 151 </td>
+   <td style="text-align:left;font-weight: bold;"> Tanzania </td>
    <td style="text-align:left;"> 0.531 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 152 </td>
-   <td style="text-align:left;"> Nigeria </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 152 </td>
+   <td style="text-align:left;font-weight: bold;"> Nigeria </td>
    <td style="text-align:left;"> 0.527 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 153 </td>
-   <td style="text-align:left;"> Cameroon </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 153 </td>
+   <td style="text-align:left;font-weight: bold;"> Cameroon </td>
    <td style="text-align:left;"> 0.518 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 154 </td>
-   <td style="text-align:left;"> Papua New Guinea </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 154 </td>
+   <td style="text-align:left;font-weight: bold;"> Papua New Guinea </td>
    <td style="text-align:left;"> 0.516 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 155 </td>
-   <td style="text-align:left;"> Zimbabwe </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 155 </td>
+   <td style="text-align:left;font-weight: bold;"> Zimbabwe </td>
    <td style="text-align:left;"> 0.516 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 156 </td>
-   <td style="text-align:left;"> Solomon Islands </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 156 </td>
+   <td style="text-align:left;font-weight: bold;"> Solomon Islands </td>
    <td style="text-align:left;"> 0.515 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 157 </td>
-   <td style="text-align:left;"> Mauritania </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 157 </td>
+   <td style="text-align:left;font-weight: bold;"> Mauritania </td>
    <td style="text-align:left;"> 0.513 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 158 </td>
-   <td style="text-align:left;"> Madagascar </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 158 </td>
+   <td style="text-align:left;font-weight: bold;"> Madagascar </td>
    <td style="text-align:left;"> 0.512 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 159 </td>
-   <td style="text-align:left;"> Rwanda </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 159 </td>
+   <td style="text-align:left;font-weight: bold;"> Rwanda </td>
    <td style="text-align:left;"> 0.498 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 160 </td>
-   <td style="text-align:left;"> Comoros </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 160 </td>
+   <td style="text-align:left;font-weight: bold;"> Comoros </td>
    <td style="text-align:left;"> 0.497 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 161 </td>
-   <td style="text-align:left;"> Lesotho </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 161 </td>
+   <td style="text-align:left;font-weight: bold;"> Lesotho </td>
    <td style="text-align:left;"> 0.497 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 162 </td>
-   <td style="text-align:left;"> Senegal </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 162 </td>
+   <td style="text-align:left;font-weight: bold;"> Senegal </td>
    <td style="text-align:left;"> 0.494 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 163 </td>
-   <td style="text-align:left;"> Haiti </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 163 </td>
+   <td style="text-align:left;font-weight: bold;"> Haiti </td>
    <td style="text-align:left;"> 0.493 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 164 </td>
-   <td style="text-align:left;"> Uganda </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 164 </td>
+   <td style="text-align:left;font-weight: bold;"> Uganda </td>
    <td style="text-align:left;"> 0.493 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 165 </td>
-   <td style="text-align:left;"> Sudan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 165 </td>
+   <td style="text-align:left;font-weight: bold;"> Sudan </td>
    <td style="text-align:left;"> 0.490 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 166 </td>
-   <td style="text-align:left;"> Togo </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 166 </td>
+   <td style="text-align:left;font-weight: bold;"> Togo </td>
    <td style="text-align:left;"> 0.487 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 167 </td>
-   <td style="text-align:left;"> Benin </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 167 </td>
+   <td style="text-align:left;font-weight: bold;"> Benin </td>
    <td style="text-align:left;"> 0.485 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 168 </td>
-   <td style="text-align:left;"> Yemen </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 168 </td>
+   <td style="text-align:left;font-weight: bold;"> Yemen </td>
    <td style="text-align:left;"> 0.482 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 169 </td>
-   <td style="text-align:left;"> Afghanistan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 169 </td>
+   <td style="text-align:left;font-weight: bold;"> Afghanistan </td>
    <td style="text-align:left;"> 0.479 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 170 </td>
-   <td style="text-align:left;"> Malawi </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 170 </td>
+   <td style="text-align:left;font-weight: bold;"> Malawi </td>
    <td style="text-align:left;"> 0.476 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 171 </td>
-   <td style="text-align:left;"> Côte d'Ivoire </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 171 </td>
+   <td style="text-align:left;font-weight: bold;"> Côte d'Ivoire </td>
    <td style="text-align:left;"> 0.474 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 172 </td>
-   <td style="text-align:left;"> Djibouti </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 172 </td>
+   <td style="text-align:left;font-weight: bold;"> Djibouti </td>
    <td style="text-align:left;"> 0.473 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 173 </td>
-   <td style="text-align:left;"> Gambia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 173 </td>
+   <td style="text-align:left;font-weight: bold;"> Gambia </td>
    <td style="text-align:left;"> 0.452 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 174 </td>
-   <td style="text-align:left;"> Ethiopia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 174 </td>
+   <td style="text-align:left;font-weight: bold;"> Ethiopia </td>
    <td style="text-align:left;"> 0.448 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 175 </td>
-   <td style="text-align:left;"> Mali </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 175 </td>
+   <td style="text-align:left;font-weight: bold;"> Mali </td>
    <td style="text-align:left;"> 0.442 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 176 </td>
-   <td style="text-align:left;"> Congo, Democratic Republic of the </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 176 </td>
+   <td style="text-align:left;font-weight: bold;"> Congo, Democratic Republic of the </td>
    <td style="text-align:left;"> 0.435 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 177 </td>
-   <td style="text-align:left;"> Liberia </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 177 </td>
+   <td style="text-align:left;font-weight: bold;"> Liberia </td>
    <td style="text-align:left;"> 0.427 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 178 </td>
-   <td style="text-align:left;"> Guinea Bissau </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 178 </td>
+   <td style="text-align:left;font-weight: bold;"> Guinea Bissau </td>
    <td style="text-align:left;"> 0.424 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 179 </td>
-   <td style="text-align:left;"> Eritrea </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 179 </td>
+   <td style="text-align:left;font-weight: bold;"> Eritrea </td>
    <td style="text-align:left;"> 0.420 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 180 </td>
-   <td style="text-align:left;"> Sierra Leone </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 180 </td>
+   <td style="text-align:left;font-weight: bold;"> Sierra Leone </td>
    <td style="text-align:left;"> 0.420 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 181 </td>
-   <td style="text-align:left;"> Mozambique </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 181 </td>
+   <td style="text-align:left;font-weight: bold;"> Mozambique </td>
    <td style="text-align:left;"> 0.418 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 182 </td>
-   <td style="text-align:left;"> South Sudan </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 182 </td>
+   <td style="text-align:left;font-weight: bold;"> South Sudan </td>
    <td style="text-align:left;"> 0.418 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 183 </td>
-   <td style="text-align:left;"> Guinea </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 183 </td>
+   <td style="text-align:left;font-weight: bold;"> Guinea </td>
    <td style="text-align:left;"> 0.414 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 184 </td>
-   <td style="text-align:left;"> Burundi </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 184 </td>
+   <td style="text-align:left;font-weight: bold;"> Burundi </td>
    <td style="text-align:left;"> 0.404 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 185 </td>
-   <td style="text-align:left;"> Burkina Faso </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 185 </td>
+   <td style="text-align:left;font-weight: bold;"> Burkina Faso </td>
    <td style="text-align:left;"> 0.402 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 186 </td>
-   <td style="text-align:left;"> Chad </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 186 </td>
+   <td style="text-align:left;font-weight: bold;"> Chad </td>
    <td style="text-align:left;"> 0.396 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;"> 187 </td>
-   <td style="text-align:left;"> Niger </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1"> 187 </td>
+   <td style="text-align:left;font-weight: bold;"> Niger </td>
    <td style="text-align:left;"> 0.353 </td>
-   <td style="text-align:left;"> low human development </td>
   </tr>
 <tr>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 188 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> Central African Republic </td>
+<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1"> 188 </td>
+   <td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;"> Central African Republic </td>
    <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> 0.352 </td>
-   <td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;"> low human development </td>
   </tr>
 </tbody>
 </table>
+</div>
 
 Output SessionInfo()
 

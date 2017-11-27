@@ -2,7 +2,9 @@
 title: "HDI Tables"
 author: "Randall Hendrickson"
 date: "November 26, 2017"
-output: html_document
+output: 
+   html_document:
+      keep_md: true
 ---
 
 ```{r setup, include=FALSE}
@@ -33,14 +35,29 @@ fourth_table <- mylist_tables[[5]]
 
 ```
 
+
+<style>
+  .col2 {
+    columns: 2 200px;         
+    -webkit-columns: 2 200px; 
+    -moz-columns: 2 200px;    
+  }
+  .col3 {
+    columns: 3 100px;
+    -webkit-columns: 3 100px;
+    -moz-columns: 3 100px;
+  }
+</style>
+
 ## Very High Human Development
 
+<div class="col2">
 ```{r output_wikipedia_table1}
 
 kable(first_table[,1:2], "html", caption = "Very High Human Development", row.names=TRUE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
   column_spec(1:2, bold = T) %>%
-  row_spec(0, angle = -5) %>%
+#  row_spec(0, angle = -5) %>%
   row_spec(10:11, bold = T, color = "white", background = "#D7261E")
 
 ```
@@ -49,8 +66,10 @@ kable(first_table[,1:2], "html", caption = "Very High Human Development", row.na
 
 ```{r output_wikipedia_table2}
 
-kable(second_table, "html", caption = "High Human Development", row.names=TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+kable(second_table[,1:2], "html", caption = "High Human Development", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
+  column_spec(1:2, bold = T) 
+#  collapse_rows(columns = 3:4)
 
 ```
 
@@ -59,7 +78,8 @@ kable(second_table, "html", caption = "High Human Development", row.names=TRUE) 
 ```{r output_wikipedia_table3}
 
 kable(third_table[,1:2], "html", caption = "Medium Human Development", row.names=TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
+  column_spec(1:2, bold = T) 
 
 ```
 
@@ -67,20 +87,30 @@ kable(third_table[,1:2], "html", caption = "Medium Human Development", row.names
 
 ```{r output_wikipedia_table4}
 
-kable(fourth_table, "html", caption = "Low Human Development", row.names=TRUE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+kable(fourth_table[,1:2], "html", caption = "Low Human Development", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
+  column_spec(1:2, bold = T) 
 
 ```
+</div>
+
 
 ## Main Table - all nations, highlighted
 
+<div class="col3">
 ```{r output_wikipedia_table_main}
 
-kable(main_table, "html", caption = "Low Human Development", row.names=TRUE) %>%
+kable(main_table[,1:2], "html", caption = "Low Human Development", row.names=TRUE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
+  column_spec(1:2, bold = T) %>%
+  group_rows("Group 1 - Very High Human Development", 1, 51) %>%
+  group_rows("Group 2 - High Human Development", 52, 106) %>%
+  group_rows("Group 3 - Medium Human Development", 107, 147) %>%
+  group_rows("Group 4 - Low Human Development", 148, 188) %>%
   row_spec(c(1, 51, 52, 105, 107, 147, 148, 188), bold = T, color = "white", background = "#D7261E")
 
 ```
+</div>
 
 Output SessionInfo()
 
