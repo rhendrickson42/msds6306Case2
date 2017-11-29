@@ -1,5 +1,6 @@
 library(knitr)
 library(ggplot2)
+library(dplyr)
 df <- read.csv("~/Documents/CleanedMike.csv")
 
 ## we only care about these 7 columns
@@ -23,7 +24,7 @@ sds <- apply(df2,2, function(x) round( sd(x,na.rm=TRUE), 2) )
 SummaryStats <- cbind(mins,q1s,medians,q3s,maxs,means,sds)
 SummaryStats
 
-## view them in an ugly table
+## view them in a table
 kable(SummaryStats)
 
 ## remove NAs for Age
@@ -70,3 +71,39 @@ ggplot(df2, aes(GPMean)) +
 unique(df2$SWLSMean)
 ggplot(df2, aes(SWLSMean)) + 
   geom_histogram(bins=20)
+
+
+## 4C/D tables for frequency 
+
+## group by different genders
+CountByGender <- df %>% group_by(Gender) %>% summarise(count = length(Gender))
+kable(CountByGender)
+
+
+## group by different work status
+CountByWorkStatus <- df %>% group_by(WorkStatus) %>% summarise(count = length(WorkStatus))
+kable(CountByWorkStatus)
+
+
+## group by different countries
+CountByCountries <- df %>% group_by(CountryOfRes) %>% summarise(count = length(CountryOfRes))
+CountriesSorted <- CountByCountries[ order(CountByCountries$count, decreasing=TRUE), ]
+kable(CountriesSorted)
+
+
+#lol occupation, we need to clean this up
+CountByOccupation <- df %>% group_by(CurrentOccu) %>% summarise(count = length(CurrentOccu))
+kable(CountByOccupation)
+
+
+## only need these 2 columns for 4E
+df3 <- df[ , c(60,61)]
+View(df3)
+
+df3$both <- "other"   ## there are some NAs probably
+df3$both[ df3$YouProcast=="yes" & df3$OthersThinkU=="yes" ] <- "We both do" 
+df3$both[ df3$YouProcast=="no" & df3$OthersThinkU=="no" ] <- "We both don't" 
+df3$both[ df3$YouProcast=="yes" & df3$OthersThinkU=="no" ] <- "I do they don't" 
+df3$both[ df3$YouProcast=="no" & df3$OthersThinkU=="yes" ] <- "I don't they do" 
+CountBySame <- df3 %>% group_by(both) %>% summarise(count = length(both))
+kable(CountBySame)
