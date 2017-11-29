@@ -2,8 +2,12 @@ ibrary(knitr)
 library(ggplot2)
 library(dplyr)
 df <- read.csv("~/Documents/CleanedMike.csv")
+View(df)
 hdi <- read.csv("~/Documents/HDIbyCountry.csv")
 colnames(hdi)[1] = "CountryOfRes"    ## need column names to match to merge
+
+
+## may want to make a function for this
 
 ## find the mean of each type per country
 CountryMeanDP <- df %>% group_by(CountryOfRes) %>% summarise(meanDP = mean(DPMean, na.rm=TRUE))
@@ -35,7 +39,7 @@ both <- cbind(AIP,GP)
 ## Ecuador, France, Iceland, Panama, Puerto Rico, Qatar, Sri Lanka, Taiwan, Turkey, Uruguay in both
 ## might want to redo this but only include countries with 2+ entries
 
-## plot
+## plot for 5B
 ggplot(AIP, aes(CountryOfRes, meanAIP, fill=HumanDev) ) +                  
   geom_col() + 
   ggtitle("Top 15 Countries by AIP Score") + 
@@ -46,7 +50,7 @@ ggplot(AIP, aes(CountryOfRes, meanAIP, fill=HumanDev) ) +
   scale_x_discrete(limits = top15AIP$CountryOfRes)                  ## maintain the order
   #guides(fill=FALSE)                                                  ## removes labels
 
-
+## plot for 5C
 ggplot(GP, aes(CountryOfRes, meanGP, fill=HumanDev) ) +
   geom_col() + 
   ggtitle("Top 15 Countries by GP Score") + 
@@ -58,6 +62,7 @@ ggplot(GP, aes(CountryOfRes, meanGP, fill=HumanDev) ) +
   #guides(fill=FALSE)
 
 
+## 5D
 model <- lm( df$AnnualIncome ~ df$Age )
 summary(model)
 ## y = 1950.98 + 1496.77 * Age
@@ -98,3 +103,21 @@ ggplot(MeanIncomePerAge, aes(x=logAge,y=meanIncome)) +
   ggtitle("Age vs. Mean Annual Income")
 
 ## doubling the age 55255 * log(2) = 38300 increase in mean salary
+
+## 5E
+LifeSat <- merge(MeanSWLSSorted,hdi,by="CountryOfRes",all.x=TRUE)
+model4 <- lm( LifeSat$meanSWLS ~ LifeSat$HDI )
+summary(model4)
+## SWLS = 4 - 1.23 HDI
+## r^2 = 0.0381, p=0.0768  (not sig at alpha=0.05)
+
+ggplot(LifeSat, aes(x=HDI,y=meanSWLS)) + 
+  geom_point() + 
+  geom_abline(intercept=4,slope=-1.23,color="blue") +
+  ggtitle("HDI vs Mean Life Satisfaction Score")
+
+## group by hdi as a category
+hd <- df %>% group_by(HumanDev) %>% summarise(SWLS = mean(SWLSMean, na.rm=TRUE))
+ggplot(hd, aes(HumanDev, SWLS, fill=HumanDev) ) +
+  geom_col() 
+## no still not really correlated
