@@ -5,6 +5,8 @@ date: "November 26, 2017"
 output: 
    html_document:
       keep_md: true
+params:
+  num_countries: 42
 ---
 
 ```{r setup, include=FALSE}
@@ -99,6 +101,7 @@ kable(fourth_table[,1:2], "html", caption = "Low Human Development", row.names=T
 
 <div class="col3">
 ```{r output_wikipedia_table_main}
+num_rows_report <- params$num_countries
 
 kable(main_table[,1:2], "html", caption = "Low Human Development", row.names=TRUE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") %>%
@@ -106,8 +109,8 @@ kable(main_table[,1:2], "html", caption = "Low Human Development", row.names=TRU
   group_rows("Group 1 - Very High Human Development", 1, 51) %>%
   group_rows("Group 2 - High Human Development", 52, 106) %>%
   group_rows("Group 3 - Medium Human Development", 107, 147) %>%
-  group_rows("Group 4 - Low Human Development", 148, 188) %>%
-  row_spec(c(1, 51, 52, 105, 107, 147, 148, 188), bold = T, color = "white", background = "#D7261E")
+  group_rows("Group 4 - Low Human Development", 148, 188) 
+#  row_spec(c(1, 51, 52, 105, 107, 147, 148, 188), bold = T, color = "white", background = "#D7261E")
 
 ```
 </div>
