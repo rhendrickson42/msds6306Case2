@@ -74,6 +74,7 @@ ggplot(df2, aes(SWLSMean)) +
 
 
 ## 4C/D tables for frequency 
+## might want to make a function to do this quicker
 
 ## group by different genders
 CountByGender <- df %>% group_by(Gender) %>% summarise(count = length(Gender))
