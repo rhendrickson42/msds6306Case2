@@ -1,0 +1,76 @@
+---
+title: "Test data cleaning"
+author: "Randall Hendrickson"
+date: "November 29, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+# if(!require("here")) cat("please install here package # devtools::install_github(\"krlmlr/here\")")
+
+library(here)
+data_setup_HDI_script <- here("scripts", "clean_data_randy2.R")
+source(data_setup_HDI_script)
+
+```
+
+
+```{r, out.width = "600px", echo=FALSE}
+graphic_file <- here("data", "procrastination.jpg")
+knitr::include_graphics(graphic_file)
+```
+
+## Procrastination is awesome
+
+## Original Dataframe
+```{r get_procrastination_df, echo=TRUE}
+
+library(DT)
+# p_df - procrastination dataframe
+p_df <- get_procrastination_dataframe()
+
+# add conditional rendering??
+# datatable(p_df, filter = 'top')
+
+# question 2a
+x <- sprintf("2. a. The procrastination dataframe has Rows: %s, Columns: %s", nrow(p_df), ncol(p_df))
+cat(x)
+
+dim(p_df)
+```
+
+
+
+```{r get_procrastination2_df}
+# question 2b
+
+df_list <- question2_rename_columns(p_df)
+
+df_new <- df_list$df
+cnames_olddf <- df_list$ocn
+
+datatable(df_new, filter = 'top')
+
+```
+
+
+```{r get_procrastination3_df}
+# question 2c
+
+# 2c-ii
+df_new1 <- question2_c(df_new)
+
+datatable(df_new, filter = 'top')
+
+```
+
+
+```{r get_procrastination_watch_df}
+#look at how to address these columns
+
+lapply(df_new1, table)
+
+```
+

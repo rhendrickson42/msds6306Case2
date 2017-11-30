@@ -1,22 +1,20 @@
 # devtools::install_github("krlmlr/here")
-library(here)
 
-datafile <- here("Data", "Procrastination.csv")
 
-my_df <- read.csv(datafile, header = TRUE, stringsAsFactors = FALSE)
+get_procrastination_dataframe <- function() {
+  library(here)
 
-dim(my_df)
-# [1] 4264   61
+  datafile <- here("Data", "Procrastination.csv")
+  my_df <- read.csv(datafile, header = TRUE, stringsAsFactors = FALSE)
 
-# backup and display original column names
-backup_cnames_orig <- colnames(my_df)
-head(backup_cnames_orig, n = 100)
+  return (my_df) 
+}
 
-temp_df <- my_df
-
-splitvec <- function(x) {
-  xx <- strsplit(x, " ")
-  return(xx)
+init_document_dataframe <- function(my_dataframe) {
+  library(tidytext)
+  doc_df <- tidy(my_dataframe)
+  
+  return(doc_df)
 }
 
 # might need something like this??
@@ -26,23 +24,46 @@ fixup_null_2NA <- function(df_tofix, col_2fix) {
   return(df_tofix)
 }
 
-# words list
-wvec10 <- "Age Gender Kids Education WorkStatus AnnualInc Occupation JobYears JobMonths CommSize"
-wvec20 <- "Country Marital Sons Daughters DP1 DP2 DP3 DP4 DP5 AIP1"
-wvec30 <- "AIP2 AIP3 AIP4 AIP5 AIP6 AIP7 AIP8 AIP9 AIP10 AIP11"
-wvec40 <- "AIP12 AIP13 AIP14 AIP15 GP1 GP2 GP3 GP4 GP5 GP6"
-wvec50 <- "GP7 GP8 GP9 GP10 GP11 GP12 GP13 GP14 GP15 GP16"
-wvec61 <- "GP17 GP18 GP19 GP20 SWLS1 SWLS2 SWLS3 SWLS4 SWLS5 UProcrast OthersProc"
+splitvec <- function(x) {
+  xx <- strsplit(x, " ")
+  return(xx)
+}
 
-cnamesNew <- c(splitvec(wvec10), splitvec(wvec20), splitvec(wvec30), splitvec(wvec40), splitvec(wvec50), splitvec(wvec61))
-cnamesNew <- unlist(cnamesNew)
-colnames(temp_df) <- cnamesNew   ## change column names
+question2_rename_columns <- function(df) {
+  # returns list of ( new_df, old_cnames )
+  old_cnames <- colnames(df)
+  new_df <- df
 
-#show column names for difference 
-head(temp_df, n = 100)
-dim(temp_df)
+  # words list
+  wvec10 <- "Age Gender Kids Education WorkStatus AnnualInc Occupation JobYears JobMonths CommSize"
+  wvec20 <- "Country Marital Sons Daughters DP1 DP2 DP3 DP4 DP5 AIP1"
+  wvec30 <- "AIP2 AIP3 AIP4 AIP5 AIP6 AIP7 AIP8 AIP9 AIP10 AIP11"
+  wvec40 <- "AIP12 AIP13 AIP14 AIP15 GP1 GP2 GP3 GP4 GP5 GP6"
+  wvec50 <- "GP7 GP8 GP9 GP10 GP11 GP12 GP13 GP14 GP15 GP16"
+  wvec61 <- "GP17 GP18 GP19 GP20 SWLS1 SWLS2 SWLS3 SWLS4 SWLS5 UProcrast OthersProc"
+  
+  cnamesNew <- c(splitvec(wvec10), splitvec(wvec20), splitvec(wvec30), splitvec(wvec40), splitvec(wvec50), splitvec(wvec61))
+  cnamesNew <- unlist(cnamesNew)
+  colnames(new_df) <- cnamesNew   ## change column names
 
-# TODO: update codebook with updated columns
+  #note - update codebook with new columns
+  
+  return( list(df=new_df,ocn=old_cnames) )
+}
+
+question2_c <- function(df) {
+  temp_df <- df
+
+  # Male, Female <- 1, 2 , change back to integer
+  temp_df$Sons[temp_df$Sons == "Male"] <- 1
+  temp_df$Sons[temp_df$Sons == "Female"] <- 2
+  temp_df$Sons <- as.integer(temp_df$Sons)
+  
+  return(temp_df)
+}
+   
+get_dead_code <- function() {
+
 
 # 2c.
 
@@ -84,7 +105,7 @@ temp_df$Mean_SWLS <- rowMeans(temp_df[, c(55:59)])
 # 3C
 # TODO: output data need to be written to cleaned folder
 # note - remove/re index
-datafile2 <- here("outputdata", "HDI_By_Countries.csv")
+datafile2 <- here(".", "HDI_By_Countries.csv")
 HDI_By_Country <- read.csv(datafile2, stringsAsFactors = FALSE)
 
 # merge data
@@ -97,6 +118,8 @@ dim(temp_df)
 
 tidy_df <-temp_df2
 write.csv(tidy_df,"Tidy_Randy.csv")
+
+}
 
 
 ##### original data

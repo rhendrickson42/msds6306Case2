@@ -1,0 +1,47 @@
+---
+title: "Bibliography and notes"
+author: "Randall Hendrickson"
+date: "November 26, 2017"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Procrastination
+
+7 Surprising Benefits of Being a Procrastinator - Procrastination is Underrated 
+https://www.inc.com/larry-kim/7-surprising-ways-procrastination-can-boost-productivity.html
+
+infographics
+https://blog.hubspot.com/marketing/tips-fight-procrastination
+
+https://www.amazon.com/Lazy-Way-Overcome-Procrastination-ebook/dp/B019GGD0U0/
+
+beer:
+https://russianriverbrewing.com/pages/procrastination
+
+
+http://journals.ama.org/doi/abs/10.1509/jmkr.47.5.933?code=amma-site
+Article Citation:
+Suzanne B. Shu, Ayelet Gneezy (2010) Procrastination of Enjoyable Experiences. Journal of Marketing Research: October 2010, Vol. 47, No. 5, pp. 933-944.
+
+Abstract
+The tendency to procrastinate applies not only to aversive tasks but also to positive experiences with immediate benefits. The authors propose that models of time discounting can explain this behavior, and they test these predictions with field data and experiments. A multicity study shows that people with unlimited time windows delay visiting desirable landmarks; however, procrastination is reduced when the window of opportunity is constrained. Similarly, people procrastinate in redeeming gift certificates and gift cards with long deadlines more than those with short deadlines, resulting in overall lower redemption rates. These results run counter to participants' predictions and typical models of impulsive behavior.
+
+
+Seinfeld's productivity secret
+https://lifehacker.com/5901013/in-defense-of-procrastination-when-to-prioritize-doing-nothing
+
+
+the power of procrastination
+https://medium.com/@docjamesw/the-power-of-procrastination-accccb110ae0
+
+
+kable and kableextra
+https://cran.r-project.org/web/packages/kableExtra/vignettes/awesome_table_in_html.html
+
+
+DataTables Table plug-in for jQuery
+https://datatables.net/
