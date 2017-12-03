@@ -60,8 +60,7 @@ ocn <- list_pdf$ocn
 # pdf - (procrastination dataframe)
 pdf_rows <- 1:61
 pdf_columns <- colnames(pdf)
-pdf_descriptions <- clean_columns
-strtrim(pdf_descriptions, 80)
+pdf_descriptions <- strtrim(clean_columns, 80)
 
 kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrastination Dataframe", row.names=FALSE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 

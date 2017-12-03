@@ -313,75 +313,8 @@ ocn <- list_pdf$ocn
 # pdf - (procrastination dataframe)
 pdf_rows <- 1:61
 pdf_columns <- colnames(pdf)
-pdf_descriptions <- clean_columns
-strtrim(pdf_descriptions, 80)
-```
+pdf_descriptions <- strtrim(clean_columns, 80)
 
-```
-##  [1] "Age"                                                                             
-##  [2] "Gender"                                                                          
-##  [3] "Kids"                                                                            
-##  [4] "Edu"                                                                             
-##  [5] "Work Status"                                                                     
-##  [6] "Annual Income"                                                                   
-##  [7] "Current Occupation"                                                              
-##  [8] "How long have you held this position Years"                                      
-##  [9] "How long have you held this position Months"                                     
-## [10] "Community size"                                                                  
-## [11] "Country of residence"                                                            
-## [12] "Marital Status"                                                                  
-## [13] "Number of sons"                                                                  
-## [14] "Number of daughters"                                                             
-## [15] "DP1 I waste a lot of time on trivial matters before getting to the final decisio"
-## [16] "DP2 Even after I make a decision I delay acting upon it"                         
-## [17] "DP3 I donâ t make decisions unless I really have to"                             
-## [18] "DP4 I delay making decisions until itâ s too late"                               
-## [19] "DP5 I put off making decisions until itâ s too late"                             
-## [20] "AIP1 I pay my bills on time"                                                     
-## [21] "AIP2 I am prompt and on time for most appointments "                             
-## [22] "AIP3 I lay out my clothes the night before I have an important appointment so I "
-## [23] "AIP4 I find myself running later than I would like to be"                        
-## [24] "AIP5 I donâ t get things done on time"                                           
-## [25] "AIP6 If someone were teaching a course on how to get things done on time I would"
-## [26] "AIP7 My friends and family think I wait until the last minute "                  
-## [27] "AIP8 I get important things done with time to spare"                             
-## [28] "AIP9 I am not very good at meeting deadlines"                                    
-## [29] "AIP10 I find myself running out of time "                                        
-## [30] "AIP11 I schedule doctorâ s appointments when I am supposed to without delay"     
-## [31] "AIP12 I am more punctual than most people I know"                                
-## [32] "AIP13 I do routine maintenance e g changing the car oil on things I own as often"
-## [33] "AIP14 When I have to be somewhere at a certain time my friends expect me to run "
-## [34] "AIP15 Putting things off till the last minute has cost me money in the past"     
-## [35] "GP1 I often find myself performing tasks that I had intended to do days before"  
-## [36] "GP2 I often miss concerts sporting events or the like because I donâ t get aroun"
-## [37] "GP3 When planning a party I make the necessary arrangements well in advance"     
-## [38] "GP4 When it is time to get up in the morning I most often get right out of bed"  
-## [39] "GP5 A letter may sit for days after I write it before mailing it possible"       
-## [40] "GP6 I generally return phone calls promptly"                                     
-## [41] "GP7 Even jobs that require little else except sitting down and doing them I find"
-## [42] "GP8 I usually make decisions as soon as possible"                                
-## [43] "GP9 I generally delay before starting on work I have to do"                      
-## [44] "GP10 When traveling I usually have to rush in preparing to arrive at the airport"
-## [45] "GP11 When preparing to go out I am seldom caught having to do something at the l"
-## [46] "GP12 In preparation for some deadlines I often waste time by doing other things" 
-## [47] "GP13 If a bill for a small amount comes I pay it right away"                     
-## [48] "GP14 I usually return a â <U+009C>RSVPâ  request very shortly after receiving it"       
-## [49] "GP15 I often have a task finished sooner than necessary"                         
-## [50] "GP16 I always seem to end up shopping for birthday gifts at the last minute"     
-## [51] "GP17 I usually buy even an essential item at the last minute"                    
-## [52] "GP18 I usually accomplish all the things I plan to do in a day"                  
-## [53] "GP19 I am continually saying â <U+009C>Iâ ll do it tomorrowâ "                          
-## [54] "GP20 I usually take care of all the tasks I have to do before I settle down and "
-## [55] "SWLS1 In most ways my life is close to my ideal"                                 
-## [56] "SWLS2 The conditions of my life are excellent"                                   
-## [57] "SWLS3 I am satisfied with my life "                                              
-## [58] "SWLS4 So far I have gotten the important things I want in life"                  
-## [59] "SWLS5 If I could live my life over I would change almost nothing"                
-## [60] "Do you consider yourself a procrastinator "                                      
-## [61] "Do others consider you a procrastinator "
-```
-
-```r
 kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrastination Dataframe", row.names=FALSE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
 ```
@@ -811,7 +744,7 @@ kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrast
 <td style="text-align:left;"> Number of daughters </td>
   </tr>
 <tr>
-<td style="text-align:left;"> DP1 I waste a lot of time on trivial matters before getting to the final decisions </td>
+<td style="text-align:left;"> DP1 I waste a lot of time on trivial matters before getting to the final decisio </td>
   </tr>
 <tr>
 <td style="text-align:left;"> DP2 Even after I make a decision I delay acting upon it </td>
@@ -832,7 +765,7 @@ kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrast
 <td style="text-align:left;"> AIP2 I am prompt and on time for most appointments </td>
   </tr>
 <tr>
-<td style="text-align:left;"> AIP3 I lay out my clothes the night before I have an important appointment so I wonâ t be late </td>
+<td style="text-align:left;"> AIP3 I lay out my clothes the night before I have an important appointment so I </td>
   </tr>
 <tr>
 <td style="text-align:left;"> AIP4 I find myself running later than I would like to be </td>
@@ -841,7 +774,7 @@ kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrast
 <td style="text-align:left;"> AIP5 I donâ t get things done on time </td>
   </tr>
 <tr>
-<td style="text-align:left;"> AIP6 If someone were teaching a course on how to get things done on time I would attend </td>
+<td style="text-align:left;"> AIP6 If someone were teaching a course on how to get things done on time I would </td>
   </tr>
 <tr>
 <td style="text-align:left;"> AIP7 My friends and family think I wait until the last minute </td>
@@ -862,10 +795,10 @@ kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrast
 <td style="text-align:left;"> AIP12 I am more punctual than most people I know </td>
   </tr>
 <tr>
-<td style="text-align:left;"> AIP13 I do routine maintenance e g changing the car oil on things I own as often as I should </td>
+<td style="text-align:left;"> AIP13 I do routine maintenance e g changing the car oil on things I own as often </td>
   </tr>
 <tr>
-<td style="text-align:left;"> AIP14 When I have to be somewhere at a certain time my friends expect me to run a bit late </td>
+<td style="text-align:left;"> AIP14 When I have to be somewhere at a certain time my friends expect me to run </td>
   </tr>
 <tr>
 <td style="text-align:left;"> AIP15 Putting things off till the last minute has cost me money in the past </td>
@@ -874,7 +807,7 @@ kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrast
 <td style="text-align:left;"> GP1 I often find myself performing tasks that I had intended to do days before </td>
   </tr>
 <tr>
-<td style="text-align:left;"> GP2 I often miss concerts sporting events or the like because I donâ t get around to buying tickets on time </td>
+<td style="text-align:left;"> GP2 I often miss concerts sporting events or the like because I donâ t get aroun </td>
   </tr>
 <tr>
 <td style="text-align:left;"> GP3 When planning a party I make the necessary arrangements well in advance </td>
@@ -889,7 +822,7 @@ kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrast
 <td style="text-align:left;"> GP6 I generally return phone calls promptly </td>
   </tr>
 <tr>
-<td style="text-align:left;"> GP7 Even jobs that require little else except sitting down and doing them I find that they seldom get done for days </td>
+<td style="text-align:left;"> GP7 Even jobs that require little else except sitting down and doing them I find </td>
   </tr>
 <tr>
 <td style="text-align:left;"> GP8 I usually make decisions as soon as possible </td>
@@ -898,10 +831,10 @@ kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrast
 <td style="text-align:left;"> GP9 I generally delay before starting on work I have to do </td>
   </tr>
 <tr>
-<td style="text-align:left;"> GP10 When traveling I usually have to rush in preparing to arrive at the airport or station at the appropriate time </td>
+<td style="text-align:left;"> GP10 When traveling I usually have to rush in preparing to arrive at the airport </td>
   </tr>
 <tr>
-<td style="text-align:left;"> GP11 When preparing to go out I am seldom caught having to do something at the last minute </td>
+<td style="text-align:left;"> GP11 When preparing to go out I am seldom caught having to do something at the l </td>
   </tr>
 <tr>
 <td style="text-align:left;"> GP12 In preparation for some deadlines I often waste time by doing other things </td>
@@ -928,7 +861,7 @@ kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrast
 <td style="text-align:left;"> GP19 I am continually saying â œIâ ll do it tomorrowâ </td>
   </tr>
 <tr>
-<td style="text-align:left;"> GP20 I usually take care of all the tasks I have to do before I settle down and relax for the evening </td>
+<td style="text-align:left;"> GP20 I usually take care of all the tasks I have to do before I settle down and </td>
   </tr>
 <tr>
 <td style="text-align:left;"> SWLS1 In most ways my life is close to my ideal </td>
