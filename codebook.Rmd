@@ -1,0 +1,67 @@
+---
+title: "Codebook"
+author: "Michael Landrum, Randall Hendrickson"
+date: "December 2, 2017"
+output: html_document
+---
+
+```{r setup, include=TRUE}
+knitr::opts_chunk$set(echo = TRUE)
+# if(!require("here")) cat("please install here package # devtools::install_github(\"krlmlr/here\")")
+
+library(here)
+data_setup_HDI_script <- here("scripts", "clean_data_randy2.R")
+source(data_setup_HDI_script)
+```
+
+## Original Procrastination Dataframe (tidied up a bit for documentation)
+
+
+```{r original_procrastination_dataframe}
+library(knitr)
+library(kableExtra)
+
+# Original Procrastination Dataframe -> original_pdf
+original_pdf <- get_procrastination_dataframe()
+original_colnames <- colnames(original_pdf)
+
+#questions <- original_colnames[15:59]
+clean_columns <- original_colnames
+clean_columns[1] <- "Age"
+clean_columns <- gsub("\\."," ", clean_columns)
+clean_columns <- gsub("X+\\s","", clean_columns)
+clean_columns <- gsub("DP+\\s","DP", clean_columns)
+clean_columns <- gsub("AIP+\\s","AIP", clean_columns)
+clean_columns <- gsub("GP+\\s","GP", clean_columns)
+clean_columns <- gsub("SWLS+\\s","SWLS", clean_columns)
+clean_columns <- gsub("â+\\s+", "\'", clean_columns) # strange character
+clean_columns <- gsub("[œâ]", "", clean_columns) # strange characters
+clean_columns <- gsub("\\s+", " ", clean_columns) # remove double spaces
+clean_columns[48] <- gsub("request", " request", clean_columns[48]) # add space after single quote
+
+# clean_columns[c(17,18,19,22,24,30,36,48,53)]
+
+kable(clean_columns, "html", caption = "Cleaner Original Procrastination Dataframe", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+    
+```
+
+## Procrastination Dataframe
+
+```{r rename_original_procrastination_dataframe}
+
+# rename columns of dataframe -> pdf
+list_pdf <- question2_rename_columns(original_pdf)
+pdf <- list_pdf$df
+ocn <- list_pdf$ocn
+
+# pdf - (procrastination dataframe)
+pdf_rows <- 1:61
+pdf_columns <- colnames(pdf)
+pdf_descriptions <- clean_columns
+
+kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrastination Dataframe", row.names=FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+```
+
