@@ -2,7 +2,9 @@
 title: "Codebook"
 author: "Michael Landrum, Randall Hendrickson"
 date: "December 2, 2017"
-output: html_document
+output: 
+   html_document:
+      keep_md: true
 ---
 
 ```{r setup, include=TRUE}
@@ -59,6 +61,7 @@ ocn <- list_pdf$ocn
 pdf_rows <- 1:61
 pdf_columns <- colnames(pdf)
 pdf_descriptions <- clean_columns
+strtrim(pdf_descriptions, 80)
 
 kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrastination Dataframe", row.names=FALSE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
