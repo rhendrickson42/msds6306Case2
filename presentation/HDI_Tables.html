@@ -2331,14 +2331,15 @@ Central African Republic
 <div id="main-table---all-nations-highlighted" class="section level2">
 <h2>Main Table - all nations, highlighted</h2>
 <div class="col3">
-<pre class="r"><code>kable(main_table[,1:2], &quot;html&quot;, caption = &quot;Low Human Development&quot;, row.names=TRUE) %&gt;%
+<pre class="r"><code>num_rows_report &lt;- params$num_countries
+
+kable(main_table[,1:2], &quot;html&quot;, caption = &quot;Low Human Development&quot;, row.names=TRUE) %&gt;%
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;), full_width = F, position = &quot;left&quot;) %&gt;%
   column_spec(1:2, bold = T) %&gt;%
   group_rows(&quot;Group 1 - Very High Human Development&quot;, 1, 51) %&gt;%
   group_rows(&quot;Group 2 - High Human Development&quot;, 52, 106) %&gt;%
   group_rows(&quot;Group 3 - Medium Human Development&quot;, 107, 147) %&gt;%
-  group_rows(&quot;Group 4 - Low Human Development&quot;, 148, 188) %&gt;%
-  row_spec(c(1, 51, 52, 105, 107, 147, 148, 188), bold = T, color = &quot;white&quot;, background = &quot;#D7261E&quot;)</code></pre>
+  group_rows(&quot;Group 4 - Low Human Development&quot;, 148, 188) </code></pre>
 <table class="table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
 <caption>
 Low Human Development
@@ -2362,13 +2363,13 @@ HDI
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
 1
 </td>
-<td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;font-weight: bold;">
 Norway
 </td>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;">
 0.949
 </td>
 </tr>
@@ -2912,13 +2913,13 @@ Romania
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
 51
 </td>
-<td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;font-weight: bold;">
 Kuwait
 </td>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;">
 0.800
 </td>
 </tr>
@@ -2928,13 +2929,13 @@ Kuwait
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
 52
 </td>
-<td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;font-weight: bold;">
 Belarus
 </td>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;">
 0.796
 </td>
 </tr>
@@ -3511,13 +3512,13 @@ Samoa
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
 105
 </td>
-<td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;font-weight: bold;">
 Maldives
 </td>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;">
 0.701
 </td>
 </tr>
@@ -3538,13 +3539,13 @@ Uzbekistan
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
 107
 </td>
-<td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;font-weight: bold;">
 Moldova
 </td>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;">
 0.699
 </td>
 </tr>
@@ -3978,13 +3979,13 @@ Kenya
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
 147
 </td>
-<td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;font-weight: bold;">
 Pakistan
 </td>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;">
 0.550
 </td>
 </tr>
@@ -3994,18 +3995,18 @@ Pakistan
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 148
 </td>
-<td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;font-weight: bold;">
 Swaziland
 </td>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;">
 0.541
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 149
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4016,7 +4017,7 @@ Syria
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 150
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4027,7 +4028,7 @@ Angola
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 151
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4038,7 +4039,7 @@ Tanzania
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 152
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4049,7 +4050,7 @@ Nigeria
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 153
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4060,7 +4061,7 @@ Cameroon
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 154
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4071,7 +4072,7 @@ Papua New Guinea
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 155
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4082,7 +4083,7 @@ Zimbabwe
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 156
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4093,7 +4094,7 @@ Solomon Islands
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 157
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4104,7 +4105,7 @@ Mauritania
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 158
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4115,7 +4116,7 @@ Madagascar
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 159
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4126,7 +4127,7 @@ Rwanda
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 160
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4137,7 +4138,7 @@ Comoros
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 161
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4148,7 +4149,7 @@ Lesotho
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 162
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4159,7 +4160,7 @@ Senegal
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 163
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4170,7 +4171,7 @@ Haiti
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 164
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4181,7 +4182,7 @@ Uganda
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 165
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4192,7 +4193,7 @@ Sudan
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 166
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4203,7 +4204,7 @@ Togo
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 167
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4214,7 +4215,7 @@ Benin
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 168
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4225,7 +4226,7 @@ Yemen
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 169
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4236,7 +4237,7 @@ Afghanistan
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 170
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4247,7 +4248,7 @@ Malawi
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 171
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4258,7 +4259,7 @@ Côte d’Ivoire
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 172
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4269,7 +4270,7 @@ Djibouti
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 173
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4280,7 +4281,7 @@ Gambia
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 174
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4291,7 +4292,7 @@ Ethiopia
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 175
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4302,7 +4303,7 @@ Mali
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 176
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4313,7 +4314,7 @@ Congo, Democratic Republic of the
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 177
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4324,7 +4325,7 @@ Liberia
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 178
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4335,7 +4336,7 @@ Guinea Bissau
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 179
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4346,7 +4347,7 @@ Eritrea
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 180
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4357,7 +4358,7 @@ Sierra Leone
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 181
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4368,7 +4369,7 @@ Mozambique
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 182
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4379,7 +4380,7 @@ South Sudan
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 183
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4390,7 +4391,7 @@ Guinea
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 184
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4401,7 +4402,7 @@ Burundi
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 185
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4412,7 +4413,7 @@ Burkina Faso
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 186
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4423,7 +4424,7 @@ Chad
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 187
 </td>
 <td style="text-align:left;font-weight: bold;">
@@ -4434,18 +4435,19 @@ Niger
 </td>
 </tr>
 <tr>
-<td style="text-align:left;font-weight: bold; padding-left: 2em;font-weight: bold;color: white;background-color: #D7261E;" indentlevel="1">
+<td style="text-align:left;font-weight: bold; padding-left: 2em;" indentLevel="1">
 188
 </td>
-<td style="text-align:left;font-weight: bold;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;font-weight: bold;">
 Central African Republic
 </td>
-<td style="text-align:left;font-weight: bold;color: white;background-color: #D7261E;">
+<td style="text-align:left;">
 0.352
 </td>
 </tr>
 </tbody>
 </table>
+<pre class="r"><code>#  row_spec(c(1, 51, 52, 105, 107, 147, 148, 188), bold = T, color = &quot;white&quot;, background = &quot;#D7261E&quot;)</code></pre>
 </div>
 <p>Output SessionInfo()</p>
 <pre class="r"><code># log environment
@@ -4464,11 +4466,11 @@ sessionInfo()</code></pre>
 ## [5] LC_TIME=English_United States.1252    
 ## 
 ## attached base packages:
-## [1] stats     graphics  grDevices utils     datasets  methods   base     
+## [1] stats     graphics  grDevices utils     datasets  base     
 ## 
 ## other attached packages:
 ## [1] tidyr_0.7.1      dplyr_0.7.4      rvest_0.3.2      xml2_1.1.1      
-## [5] kableExtra_0.6.1 knitr_1.17       here_0.1        
+## [5] kableExtra_0.6.1 knitr_1.17       here_0.1         rmarkdown_1.6   
 ## 
 ## loaded via a namespace (and not attached):
 ##  [1] Rcpp_0.12.13      bindr_0.1         magrittr_1.5     
@@ -4480,7 +4482,7 @@ sessionInfo()</code></pre>
 ## [19] rprojroot_1.2     digest_0.6.12     tibble_1.3.4     
 ## [22] bindrcpp_0.2      purrr_0.2.3       readr_1.1.1      
 ## [25] curl_3.0          glue_1.1.1        evaluate_0.10.1  
-## [28] rmarkdown_1.6     stringi_1.1.5     compiler_3.4.2   
+## [28] stringi_1.1.5     compiler_3.4.2    methods_3.4.2    
 ## [31] scales_0.5.0      backports_1.1.1   XML_3.98-1.9     
 ## [34] pkgconfig_2.0.1</code></pre>
 </div>
