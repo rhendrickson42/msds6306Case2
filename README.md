@@ -1,27 +1,29 @@
 # msds6306Case2
 
-Directory Structure
-
-< project_root >
-
-- Data
-- scripts
-- Presentation
-- tidy
+Monetizing not making a decision.
 
 
-[Project Codebook](codebook.md) <- Project Cookbook
 
 ## Project Structure
 
-[Data](Data)
+ - [Data](Data) - project data directory
+
+ - [outputdata](outputdata) - project output data directory
+
+ - [presentation](presentation) - project presentation directory
+
+ - [scripts](scripts) - project script directory
+
+ - Makefile - Project makefile
+
+ - README.md - this file
+
+ - [codebook.md](codebook.md) <- Project Cookbook
 
 
-codebook.Rmd
+### Human Development Index (HDI)
+ 
+ - HDI reference - http://en.wikipedia.org/wiki/List_of_countries_by_Human_Development_Index#Complete_list_of_countries - wikipedia
 
-
-## Human Development Index (HDI)
-Wikipedia - http://en.wikipedia.org/wiki/List_of_countries_by_Human_Development_Index#Complete_list_of_countries
-
-[HDI Table](outputdata/HDI_By_Countries.csv)
+ - [HDI Table](outputdata/HDI_By_Countries.csv) - HDI table scraped from above link
 
