@@ -74,8 +74,25 @@ kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrast
 
 ```
 
+## Procrastination Data from 2. e.
 
-## TODO - add columns from 2. e.
+```{r update_codebook_columns}
+
+# document additional columns added for analysis
+p_list1 <- c(62:67)
+p_list2 <- c("DPMean", "AIPMean", "GPMean", "SWLSMean", "HDI", "HDI_Category")
+p_list3 <- c("Individuals average decisional procrastination",
+             "Individauls average procrastination behavior",
+             "Individuals average generalized procrastination",
+             "Individuals average lisfe satisfaction",
+             "Individuals country HDI",
+             "Individuals country HDI Category")
+
+kable(list(p_list1, p_list2, p_list3), "html", caption = "Procrastination Data - additional columns", row.names=FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+```
+
 
 ## Notes:
 

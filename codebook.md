@@ -896,8 +896,99 @@ kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrast
   </tr></tbody>
 </table>
 
+## Procrastination Data from 2. e.
 
-## TODO - add columns from 2. e.
+
+```r
+# document additional columns added for analysis
+p_list1 <- c(62:67)
+p_list2 <- c("DPMean", "AIPMean", "GPMean", "SWLSMean", "HDI", "HDI_Category")
+p_list3 <- c("Individuals average decisional procrastination",
+             "Individauls average procrastination behavior",
+             "Individuals average generalized procrastination",
+             "Individuals average lisfe satisfaction",
+             "Individuals country HDI",
+             "Individuals country HDI Category")
+
+kable(list(p_list1, p_list2, p_list3), "html", caption = "Procrastination Data - additional columns", row.names=FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+```
+
+<table class="kable_wrapper table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<caption>Procrastination Data - additional columns</caption>
+<tbody><tr>
+<td> 
+
+<table><tbody>
+<tr>
+<td style="text-align:right;"> 62 </td>
+  </tr>
+<tr>
+<td style="text-align:right;"> 63 </td>
+  </tr>
+<tr>
+<td style="text-align:right;"> 64 </td>
+  </tr>
+<tr>
+<td style="text-align:right;"> 65 </td>
+  </tr>
+<tr>
+<td style="text-align:right;"> 66 </td>
+  </tr>
+<tr>
+<td style="text-align:right;"> 67 </td>
+  </tr>
+</tbody></table>
+</td>
+   <td> 
+
+<table><tbody>
+<tr>
+<td style="text-align:left;"> DPMean </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> AIPMean </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> GPMean </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> SWLSMean </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> HDI </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> HDI_Category </td>
+  </tr>
+</tbody></table>
+</td>
+   <td> 
+
+<table><tbody>
+<tr>
+<td style="text-align:left;"> Individuals average decisional procrastination </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Individauls average procrastination behavior </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Individuals average generalized procrastination </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Individuals average lisfe satisfaction </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Individuals country HDI </td>
+  </tr>
+<tr>
+<td style="text-align:left;"> Individuals country HDI Category </td>
+  </tr>
+</tbody></table>
+</td>
+  </tr></tbody>
+</table>
+
 
 ## Notes:
 

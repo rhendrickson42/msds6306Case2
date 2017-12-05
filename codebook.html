@@ -1617,8 +1617,137 @@ Do others consider you a procrastinator
 </tbody>
 </table>
 </div>
-<div id="todo---add-columns-from-2.-e." class="section level2">
-<h2>TODO - add columns from 2. e.</h2>
+<div id="procrastination-data-from-2.-e." class="section level2">
+<h2>Procrastination Data from 2. e.</h2>
+<pre class="r"><code># document additional columns added for analysis
+p_list1 &lt;- c(62:67)
+p_list2 &lt;- c(&quot;DPMean&quot;, &quot;AIPMean&quot;, &quot;GPMean&quot;, &quot;SWLSMean&quot;, &quot;HDI&quot;, &quot;HDI_Category&quot;)
+p_list3 &lt;- c(&quot;Individuals average decisional procrastination&quot;,
+             &quot;Individauls average procrastination behavior&quot;,
+             &quot;Individuals average generalized procrastination&quot;,
+             &quot;Individuals average lisfe satisfaction&quot;,
+             &quot;Individuals country HDI&quot;,
+             &quot;Individuals country HDI Category&quot;)
+
+kable(list(p_list1, p_list2, p_list3), &quot;html&quot;, caption = &quot;Procrastination Data - additional columns&quot;, row.names=FALSE) %&gt;%
+  kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;), full_width = F, position = &quot;left&quot;) </code></pre>
+<table class="kable_wrapper table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
+<caption>
+Procrastination Data - additional columns
+</caption>
+<tbody>
+<tr>
+<td>
+<table>
+<tbody>
+<tr>
+<td style="text-align:right;">
+62
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+63
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+64
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+65
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+66
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+67
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table>
+<tbody>
+<tr>
+<td style="text-align:left;">
+DPMean
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+AIPMean
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+GPMean
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+SWLSMean
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HDI
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+HDI_Category
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td>
+<table>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Individuals average decisional procrastination
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Individauls average procrastination behavior
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Individuals average generalized procrastination
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Individuals average lisfe satisfaction
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Individuals country HDI
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Individuals country HDI Category
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <div id="notes" class="section level2">
 <h2>Notes:</h2>
