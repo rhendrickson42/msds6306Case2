@@ -21,8 +21,7 @@ codebook.Rmd
 
 
 ## Human Development Index (HDI)
-
-[http://en.wikipedia.org/wiki/List_of_countries_by_Human_Development_Index#Complete_list_of_countries]
+Wikipedia - http://en.wikipedia.org/wiki/List_of_countries_by_Human_Development_Index#Complete_list_of_countries
 
 [HDI Table](outputdata/HDI_By_Countries.csv)
 
