@@ -48,7 +48,7 @@ kable(clean_columns, "html", caption = "Cleaner Original Procrastination Datafra
     
 ```
 
-## Procrastination Dataframe
+## Procrastination Data
 
 ```{r rename_original_procrastination_dataframe}
 
@@ -62,10 +62,13 @@ pdf_rows <- 1:61
 pdf_columns <- colnames(pdf)
 pdf_descriptions <- strtrim(clean_columns, 80)
 
-kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrastination Dataframe", row.names=FALSE) %>%
+kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrastination Data", row.names=FALSE) %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
 
 ```
+
+## Human Development Index Tables
+[HDI Tables](presentation/HDI_Tables.md)
 
 ## TODO - add columns from 2. e.
 
@@ -76,17 +79,18 @@ DP, AIP, GP, SWLS
 DP
   Decisional Procrastination Scale - According to Janis and Mann, intermediate levels of stress are associated with the ideal form of decision making.
   Significance of the Study Decisional procrastination is defined as a maladaptive pattern of postponing a decision when faced with conflicts and choices (Ferrari, Johnson & McCown, 1995). 
+Decisional Procrastination involves delaying a decision within a specific time frame.
 
 AIP 
 Adult Inventory of Procrastination
 McCown and Johnson (1989) developed the Adult Inventory of Procrastination (AIP) to meet the need for a measure of procrastination not limited to traditional-age college undergraduates. 
+Adult Inventory of Procrastination is composed of 15 Likert scale items such as "I am not very good at meeting deadlines" (item 9 - AIP9)
 
 GP
-Generalized Procrastination -
+Generalized Procrastination - 
 This paper considered three studies designed to examine procrastinatory behavior. In Study I, a general form (G) of a true-false procrastination scale was created. This form was based on an earlier version of the scale containing parallel forms A and B. Procrastination was positively related to measures of disorganization and independent of need-achievement, energy level, and self-esteem. High scorers on the procrastination scale were more likely to return their completed inventory late. Procrastination was unrelated to grade-point average (R = −10). In Study II, subjects completed Form G of the procrastination scale and a variation of Little's (1983) Personal Projects Questionnaire. Based on ratings of their personal projects, procrastinators and nonprocrastinators were distinguished in a number of ways, foremost being the nonprocrastinator's more positive response to the project dimension of stress and the procrastinator's greater sensitivity to how enjoyable the project was in terms of time spent. In Study III, after completing a personality inventory, air-passengers awaiting their flight departure were asked to take an envelope with them and to mail it back on a designated date. Procrastinators were less accurate in doing so than were nonprocrastinators. Various aspects of procrastinatory behavior were discussed, including a reconsideration of the defining of the construct.
-
-Note: Reversed-keyed items: 3,4,6,8,11,13,14,15,18,20 
+Generalized Procrastination Scale is composed of 20 question to measure procrastination such as “I generally delay before starting on work I have to do” on a 5-point scale. 
 
 SWLS
 Life Satisfaction
-
+Satisfaction with Life Scale is a very brief set of questions to measure satisfaction with one's life, such as "SWLS3 - I am satisfied with my life"

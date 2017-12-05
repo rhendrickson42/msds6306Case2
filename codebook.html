@@ -148,8 +148,8 @@ clean_columns &lt;- gsub(&quot;DP+\\s&quot;,&quot;DP&quot;, clean_columns)
 clean_columns &lt;- gsub(&quot;AIP+\\s&quot;,&quot;AIP&quot;, clean_columns)
 clean_columns &lt;- gsub(&quot;GP+\\s&quot;,&quot;GP&quot;, clean_columns)
 clean_columns &lt;- gsub(&quot;SWLS+\\s&quot;,&quot;SWLS&quot;, clean_columns)
-clean_columns &lt;- gsub(&quot;Ã¢+\\s+&quot;, &quot;\'&quot;, clean_columns) # strange character
-clean_columns &lt;- gsub(&quot;[Å“Ã¢]&quot;, &quot;&quot;, clean_columns) # strange characters
+clean_columns &lt;- gsub(&quot;â+\\s+&quot;, &quot;\'&quot;, clean_columns) # strange character
+clean_columns &lt;- gsub(&quot;[œâ]&quot;, &quot;&quot;, clean_columns) # strange characters
 clean_columns &lt;- gsub(&quot;\\s+&quot;, &quot; &quot;, clean_columns) # remove double spaces
 clean_columns[48] &lt;- gsub(&quot;request&quot;, &quot; request&quot;, clean_columns[48]) # add space after single quote
 
@@ -295,7 +295,7 @@ DP2 Even after I make a decision I delay acting upon it
 17
 </td>
 <td style="text-align:left;">
-DP3 I donâ t make decisions unless I really have to
+DP3 I don’t make decisions unless I really have to
 </td>
 </tr>
 <tr>
@@ -303,7 +303,7 @@ DP3 I donâ t make decisions unless I really have to
 18
 </td>
 <td style="text-align:left;">
-DP4 I delay making decisions until itâ s too late
+DP4 I delay making decisions until it’s too late
 </td>
 </tr>
 <tr>
@@ -311,7 +311,7 @@ DP4 I delay making decisions until itâ s too late
 19
 </td>
 <td style="text-align:left;">
-DP5 I put off making decisions until itâ s too late
+DP5 I put off making decisions until it’s too late
 </td>
 </tr>
 <tr>
@@ -335,7 +335,7 @@ AIP2 I am prompt and on time for most appointments
 22
 </td>
 <td style="text-align:left;">
-AIP3 I lay out my clothes the night before I have an important appointment so I wonâ t be late
+AIP3 I lay out my clothes the night before I have an important appointment so I won’t be late
 </td>
 </tr>
 <tr>
@@ -351,7 +351,7 @@ AIP4 I find myself running later than I would like to be
 24
 </td>
 <td style="text-align:left;">
-AIP5 I donâ t get things done on time
+AIP5 I don’t get things done on time
 </td>
 </tr>
 <tr>
@@ -399,7 +399,7 @@ AIP10 I find myself running out of time
 30
 </td>
 <td style="text-align:left;">
-AIP11 I schedule doctorâ s appointments when I am supposed to without delay
+AIP11 I schedule doctor’s appointments when I am supposed to without delay
 </td>
 </tr>
 <tr>
@@ -447,7 +447,7 @@ GP1 I often find myself performing tasks that I had intended to do days before
 36
 </td>
 <td style="text-align:left;">
-GP2 I often miss concerts sporting events or the like because I donâ t get around to buying tickets on time
+GP2 I often miss concerts sporting events or the like because I don’t get around to buying tickets on time
 </td>
 </tr>
 <tr>
@@ -543,7 +543,7 @@ GP13 If a bill for a small amount comes I pay it right away
 48
 </td>
 <td style="text-align:left;">
-GP14 I usually return a â œRSVPâ request very shortly after receiving it
+GP14 I usually return a ‘RSVP’ request very shortly after receiving it
 </td>
 </tr>
 <tr>
@@ -583,7 +583,7 @@ GP18 I usually accomplish all the things I plan to do in a day
 53
 </td>
 <td style="text-align:left;">
-GP19 I am continually saying â œIâ ll do it tomorrowâ
+GP19 I am continually saying ‘I’ll do it tomorrow’
 </td>
 </tr>
 <tr>
@@ -653,8 +653,8 @@ Do others consider you a procrastinator
 </tbody>
 </table>
 </div>
-<div id="procrastination-dataframe" class="section level2">
-<h2>Procrastination Dataframe</h2>
+<div id="procrastination-data" class="section level2">
+<h2>Procrastination Data</h2>
 <pre class="r"><code># rename columns of dataframe -&gt; pdf
 list_pdf &lt;- question2_rename_columns(original_pdf)
 pdf &lt;- list_pdf$df
@@ -665,11 +665,11 @@ pdf_rows &lt;- 1:61
 pdf_columns &lt;- colnames(pdf)
 pdf_descriptions &lt;- strtrim(clean_columns, 80)
 
-kable(list(pdf_rows, pdf_columns, pdf_descriptions), &quot;html&quot;, caption = &quot;Procrastination Dataframe&quot;, row.names=FALSE) %&gt;%
+kable(list(pdf_rows, pdf_columns, pdf_descriptions), &quot;html&quot;, caption = &quot;Procrastination Data&quot;, row.names=FALSE) %&gt;%
   kable_styling(bootstrap_options = c(&quot;striped&quot;, &quot;hover&quot;, &quot;condensed&quot;, &quot;responsive&quot;), full_width = F, position = &quot;left&quot;) </code></pre>
 <table class="kable_wrapper table table-striped table-hover table-condensed table-responsive" style="width: auto !important; ">
 <caption>
-Procrastination Dataframe
+Procrastination Data
 </caption>
 <tbody>
 <tr>
@@ -1380,17 +1380,17 @@ DP2 Even after I make a decision I delay acting upon it
 </tr>
 <tr>
 <td style="text-align:left;">
-DP3 I donâ t make decisions unless I really have to
+DP3 I don’t make decisions unless I really have to
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-DP4 I delay making decisions until itâ s too late
+DP4 I delay making decisions until it’s too late
 </td>
 </tr>
 <tr>
 <td style="text-align:left;">
-DP5 I put off making decisions until itâ s too late
+DP5 I put off making decisions until it’s too late
 </td>
 </tr>
 <tr>
@@ -1415,7 +1415,7 @@ AIP4 I find myself running later than I would like to be
 </tr>
 <tr>
 <td style="text-align:left;">
-AIP5 I donâ t get things done on time
+AIP5 I don’t get things done on time
 </td>
 </tr>
 <tr>
@@ -1445,7 +1445,7 @@ AIP10 I find myself running out of time
 </tr>
 <tr>
 <td style="text-align:left;">
-AIP11 I schedule doctorâ s appointments when I am supposed to without delay
+AIP11 I schedule doctor’s appointments when I am supposed to without delay
 </td>
 </tr>
 <tr>
@@ -1475,7 +1475,7 @@ GP1 I often find myself performing tasks that I had intended to do days before
 </tr>
 <tr>
 <td style="text-align:left;">
-GP2 I often miss concerts sporting events or the like because I donâ t get aroun
+GP2 I often miss concerts sporting events or the like because I don’t get around
 </td>
 </tr>
 <tr>
@@ -1535,7 +1535,7 @@ GP13 If a bill for a small amount comes I pay it right away
 </tr>
 <tr>
 <td style="text-align:left;">
-GP14 I usually return a â œRSVPâ request very shortly after receiving it
+GP14 I usually return a ‘RSVP’ request very shortly after receiving it
 </td>
 </tr>
 <tr>
@@ -1560,7 +1560,7 @@ GP18 I usually accomplish all the things I plan to do in a day
 </tr>
 <tr>
 <td style="text-align:left;">
-GP19 I am continually saying â œIâ ll do it tomorrowâ
+GP19 I am continually saying ‘I’ll do it tomorrow’
 </td>
 </tr>
 <tr>
@@ -1610,17 +1610,20 @@ Do others consider you a procrastinator
 </tbody>
 </table>
 </div>
+<div id="human-development-index-tables" class="section level2">
+<h2>Human Development Index Tables</h2>
+<p><a href="presentation/HDI_Tables.md">HDI Tables</a></p>
+</div>
 <div id="todo---add-columns-from-2.-e." class="section level2">
 <h2>TODO - add columns from 2. e.</h2>
 </div>
 <div id="notes" class="section level2">
 <h2>Notes:</h2>
 <p>DP, AIP, GP, SWLS</p>
-<p>DP Decisional Procrastination Scale - According to Janis and Mann, intermediate levels of stress are associated with the ideal form of decision making. Significance of the Study Decisional procrastination is defined as a maladaptive pattern of postponing a decision when faced with conflicts and choices (Ferrari, Johnson &amp; McCown, 1995).</p>
-<p>AIP Adult Inventory of Procrastination McCown and Johnson (1989) developed the Adult Inventory of Procrastination (AIP) to meet the need for a measure of procrastination not limited to traditional-age college undergraduates.</p>
-<p>GP Generalized Procrastination - This paper considered three studies designed to examine procrastinatory behavior. In Study I, a general form (G) of a true-false procrastination scale was created. This form was based on an earlier version of the scale containing parallel forms A and B. Procrastination was positively related to measures of disorganization and independent of need-achievement, energy level, and self-esteem. High scorers on the procrastination scale were more likely to return their completed inventory late. Procrastination was unrelated to grade-point average (R = âˆ’10). In Study II, subjects completed Form G of the procrastination scale and a variation of Little’s (1983) Personal Projects Questionnaire. Based on ratings of their personal projects, procrastinators and nonprocrastinators were distinguished in a number of ways, foremost being the nonprocrastinator’s more positive response to the project dimension of stress and the procrastinator’s greater sensitivity to how enjoyable the project was in terms of time spent. In Study III, after completing a personality inventory, air-passengers awaiting their flight departure were asked to take an envelope with them and to mail it back on a designated date. Procrastinators were less accurate in doing so than were nonprocrastinators. Various aspects of procrastinatory behavior were discussed, including a reconsideration of the defining of the construct.</p>
-<p>Note: Reversed-keyed items: 3,4,6,8,11,13,14,15,18,20</p>
-<p>SWLS Life Satisfaction</p>
+<p>DP Decisional Procrastination Scale - According to Janis and Mann, intermediate levels of stress are associated with the ideal form of decision making. Significance of the Study Decisional procrastination is defined as a maladaptive pattern of postponing a decision when faced with conflicts and choices (Ferrari, Johnson &amp; McCown, 1995). Decisional Procrastination involves delaying a decision within a specific time frame.</p>
+<p>AIP Adult Inventory of Procrastination McCown and Johnson (1989) developed the Adult Inventory of Procrastination (AIP) to meet the need for a measure of procrastination not limited to traditional-age college undergraduates. Adult Inventory of Procrastination is composed of 15 Likert scale items such as “I am not very good at meeting deadlines” (item 9 - AIP9)</p>
+<p>GP Generalized Procrastination - This paper considered three studies designed to examine procrastinatory behavior. In Study I, a general form (G) of a true-false procrastination scale was created. This form was based on an earlier version of the scale containing parallel forms A and B. Procrastination was positively related to measures of disorganization and independent of need-achievement, energy level, and self-esteem. High scorers on the procrastination scale were more likely to return their completed inventory late. Procrastination was unrelated to grade-point average (R = −10). In Study II, subjects completed Form G of the procrastination scale and a variation of Little’s (1983) Personal Projects Questionnaire. Based on ratings of their personal projects, procrastinators and nonprocrastinators were distinguished in a number of ways, foremost being the nonprocrastinator’s more positive response to the project dimension of stress and the procrastinator’s greater sensitivity to how enjoyable the project was in terms of time spent. In Study III, after completing a personality inventory, air-passengers awaiting their flight departure were asked to take an envelope with them and to mail it back on a designated date. Procrastinators were less accurate in doing so than were nonprocrastinators. Various aspects of procrastinatory behavior were discussed, including a reconsideration of the defining of the construct. Generalized Procrastination Scale is composed of 20 question to measure procrastination such as “I generally delay before starting on work I have to do” on a 5-point scale.</p>
+<p>SWLS Life Satisfaction Satisfaction with Life Scale is a very brief set of questions to measure satisfaction with one’s life, such as “SWLS3 - I am satisfied with my life”</p>
 </div>
 
 
