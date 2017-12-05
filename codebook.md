@@ -22,7 +22,8 @@ source(data_setup_HDI_script)
 ## Referenced documentation
 
 ### Human Development Index Tables
-[HDI Tables](presentation/HDI_Tables.md)
+[HDI Tables](presentation/HDI_Tables.md) - *Gets HDI tables from Wikipedia by calling get_Wikipedia_HDI_tables() *
+
 
 
 
