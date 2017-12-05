@@ -102,7 +102,8 @@ kable(CountByOccupation)
 
 ## only need these 2 columns for 4E
 df3 <- df[ , c(60,61)]
-View(df3)
+#View(df3)
+head(df3)
 
 df3$both <- "other"   ## there are some NAs probably
 df3$both[ df3$YouProcast=="yes" & df3$OthersThinkU=="yes" ] <- "We both do" 

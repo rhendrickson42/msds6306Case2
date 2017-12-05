@@ -1,7 +1,7 @@
 library(here)
 procrastination_file_name <- here("data", "Procrastination.csv")
 hdi_by_country_file <- here("data", "HDIbyCountry.csv")
-cleaned_mike_file <- here("data", "cleanedMike.csv")
+cleaned_mike_file <- here("data", "cleaned_mike_data_file.csv")
 
 df <- read.csv(procrastination_file_name, header=TRUE, stringsAsFactors = FALSE)
 

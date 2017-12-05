@@ -6,7 +6,8 @@ library(here)
 cleaned_file_name <- here("data", "CleanedMike.csv")
 hdi_by_country_file <- here("data", "HDIbyCountry.csv")
 df <- read.csv(cleaned_file_name)
-View(df)
+#View(df)
+head(df)
 hdi <- read.csv(hdi_by_country_file)
 colnames(hdi)[1] = "CountryOfRes"    ## need column names to match to merge
 
