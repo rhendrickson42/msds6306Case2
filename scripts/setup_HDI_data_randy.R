@@ -3,9 +3,9 @@
 
 get_Wikipedia_HDI_tables <- function() {
   library(here)
-  library("rvest")
-  library("dplyr")
-  library("tidyr")
+  library(rvest)
+  library(dplyr)
+  library(tidyr)
   
   URL <- "https://en.wikipedia.org/wiki/List_of_countries_by_Human_Development_Index#Complete_list_of_countries"
   web_html <- read_html(URL)
@@ -32,11 +32,11 @@ get_Wikipedia_HDI_tables <- function() {
   # 3a 3b output tables
   output_directory <- here("outputdata")
   dir.create(output_directory)
-  write.csv(new_table1, paste0(output_directory, "/HDI_veryhigh.csv"))
-  write.csv(new_table2, paste0(output_directory, "/HDI_high.csv"))
-  write.csv(new_table3, paste0(output_directory, "/HDI_medium.csv"))
-  write.csv(new_table4, paste0(output_directory, "/HDI_low.csv"))
-  write.csv(merged_df, paste0(output_directory, "/HDI_By_Countries.csv"))
+  write.table(new_table1, paste0(output_directory, "/HDI_veryhigh.csv"), sep="," ,row.names=FALSE)
+  write.table(new_table2, paste0(output_directory, "/HDI_high.csv"), sep="," ,row.names=FALSE)
+  write.table(new_table3, paste0(output_directory, "/HDI_medium.csv"), sep="," ,row.names=FALSE)
+  write.table(new_table4, paste0(output_directory, "/HDI_low.csv"), sep="," ,row.names=FALSE)
+  write.table( merged_df, paste0(output_directory, "/HDI_By_Countries.csv"), sep="," ,row.names=FALSE)
 
   return(list(merged_df, new_table1, new_table2, new_table3, new_table4))  
 }

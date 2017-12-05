@@ -6,9 +6,10 @@
 # --- splitvec <- function(x) {
 # --- question2_rename_columns <- function(df) {
 # --- question2_c <- function(df) {
+# --- question3_c_Merge_Data <- function(df) {
 
 ### =======================================          
- 
+
 get_procrastination_dataframe <- function() {
   library(here)
 
@@ -118,5 +119,36 @@ question2_c <- function(df) {
   p_df$GPMean   <- rowMeans( p_df[,c(35:54)] )
   p_df$SWLSMean <- rowMeans( p_df[,c(55:59)] )
 
+  # TODO remove when not needed for verification
+  step2_datafile <- here("outputdata", "question_2e_dataframe.csv")
+  write.csv(p_df, step2_datafile, row.names=FALSE)
+  
   return(p_df)
+}
+
+### =======================================          
+
+question3_c_Merge_Data <- function(df) {
+  temp_df <- df
+  
+  # 3. c
+
+  HDI_datafile <- here("outputdata", "HDI_By_Countries.csv")
+  HDI_By_Country <- read.csv(HDI_datafile, stringsAsFactors = FALSE)
+
+  # merge data
+  temp_df2 <- merge(temp_df, HDI_By_Country, by="Country")
+
+  # TODO remove one after verify
+  dim(temp_df2)
+  dim(temp_df)
+  # TODO - check again
+  #[1] 3996   68
+  #[1] 4264   65
+
+  # write tidy out
+  tidy_datafile <- here("outputdata", "Tidy_Randy.csv")
+  write.csv(temp_df2, tidy_datafile)
+
+  return(temp_df2)
 }
