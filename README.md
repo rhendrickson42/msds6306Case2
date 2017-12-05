@@ -10,7 +10,7 @@ There is a quote associated with actor Christopher Parker concerning procrastina
 
 Procrastinators should not be shamed, they should be enbraced. We are developing a set of new Credit and Gift cards targeting procrastinators. These customers don't want to deal with short deadlines. If they forget a payment, no problem. If they forget to redeem a gift card, no problem. We have a product for that. 
 
-With this strategy, the bank president suggested they use some of the companies new Procrastination data, along with the Human Develoopment Index to help select which markets they should first approach with the new company product line.
+With this strategy, the bank president suggested they use some of the company's new Procrastination data, along with the Human Develoopment Index to help select which markets they should first approach with the new company product line.
 
 
 
@@ -36,4 +36,43 @@ With this strategy, the bank president suggested they use some of the companies 
  - HDI reference - http://en.wikipedia.org/wiki/List_of_countries_by_Human_Development_Index#Complete_list_of_countries - wikipedia
 
  - [HDI Table](outputdata/HDI_By_Countries.csv) - HDI table scraped from above link
+
+## Packages Used
+
+```r
+
+library(dplyr)
+library(DT)
+library(ggplot2)
+library(here)   # install using  - devtools::install_github("krlmlr/here")
+library(kableExtra)
+library(knitr)
+library(rvest)
+library(tidytext)
+
+```
+
+## More info
+
+### Contact Information:
+
+```r
+Michael, 
+Randall, rhendrickson # smu.edu
+
+```
+### How to build
+```r
+# with appropriate devtool environment, at project root, run:
+make
+
+# with RStudio, 
+# File -> Open Project,
+# on build tab, select Build All
+
+```
+
+### Reproducible Environment - log session information
+[sessionInfo](presentation/HDI_Tables.md) - session information at bottom of page
+
 
