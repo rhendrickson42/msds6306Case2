@@ -1,4 +1,9 @@
-df <- read.csv("~/Documents/Procrastination.csv", header=TRUE, stringsAsFactors = FALSE)
+library(here)
+procrastination_file_name <- here("data", "Procrastination.csv")
+hdi_by_country_file <- here("data", "HDIbyCountry.csv")
+cleaned_mike_file <- here("data", "cleanedMike.csv")
+
+df <- read.csv(procrastination_file_name, header=TRUE, stringsAsFactors = FALSE)
 
 cnamesOld <- colnames(df)        ## save column names if we need later
 test <- df    ## temp df for testing with
@@ -6,6 +11,7 @@ test <- df    ## temp df for testing with
 ## 2A
 dim(df)       ## 61 variables with 4107 observations
 
+colnames(test)[1] <- "Age"
 test <- test[ test$Age >= 18 , ]       ## 4A, remove underaged observation
 row.names(test) <- 1:nrow(test)        ## renumber rows
 
@@ -71,7 +77,7 @@ test$SWLSMean <- rowMeans( test[,c(55:59)] )
 
 
 ## merge the original df with the hdi df
-HDI <- read.csv("~/Documents/HDIbyCountry.csv", stringsAsFactors = FALSE)
+HDI <- read.csv(hdi_by_country_file, stringsAsFactors = FALSE)
 
 ## make sure the column you merge have the same name
 colnames(HDI)[1] <- "CountryOfRes"
@@ -85,4 +91,5 @@ dim(test2)
 dim(test)         ## I lost 4107 - 40175 = 32 observations
 
 cleaned <- test
-write.csv(cleaned,"cleanedMike.csv")
+write.csv(cleaned, cleaned_mike_file)
+

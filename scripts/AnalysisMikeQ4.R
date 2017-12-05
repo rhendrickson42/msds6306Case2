@@ -1,7 +1,10 @@
 library(knitr)
 library(ggplot2)
 library(dplyr)
-df <- read.csv("~/Documents/CleanedMike.csv")
+
+library(here)
+cleaned_file_name <- here("data", "CleanedMike.csv")
+df <- read.csv(cleaned_file_name)
 
 ## we only care about these 7 columns
 df2 <- df[ , c( match("Age",names(df)),
