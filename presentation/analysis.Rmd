@@ -1,0 +1,326 @@
+---
+title: "Analysis"
+author: "Michael Landrum, Randall Hendrickson"
+date: "December 1, 2017"
+output: 
+   html_document:
+      keep_md: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(here)
+library(knitr)
+library(kableExtra)
+
+data_setup_HDI_script <- here("scripts", "clean_data_randy2.R")
+source(data_setup_HDI_script)
+
+```
+
+
+procrastination
+4264   61
+
+2.e
+4264   65
+
+3.
+4264   ??
+
+```{r analysis_setup}
+
+  hdi_datafile <- here("outputdata", "HDI_By_Countries.csv")
+  hdi_df <- read.csv(hdi_datafile, stringsAsFactors = FALSE)
+
+  step2_datafile <- here("outputdata", "question_2e_dataframe.csv")
+  df1 <- read.csv(step2_datafile, stringsAsFactors = FALSE)
+  head(df1)
+  colnames(df1)
+
+  dim(df1)
+  dim(hdi_df)
+
+  head(df1[,62:65])
+  head(hdi_df)
+    
+  proc_df <- question3_c_Merge_Data(df1)
+  
+  dim(proc_df)
+
+  list_names <- colnames(proc_df)
+  kable(list_names, "html", caption = "Merged Columns", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+  kable(head(proc_df))
+  
+```
+
+## Temporary to verify data
+
+```{r analysis_step1}
+
+# generate frequency table
+counts <- as.data.frame(table(proc_df$Country))
+colnames(counts) <- c("Country", "Frequency")
+
+kable(counts, "html", caption = "Procrastination Counts", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+proc_unique <- unique(proc_df$Country)
+hdi_unique  <- unique(hdi_df$Country)
+
+length(proc_unique)
+length(hdi_unique)
+
+proc_unique[!(proc_unique %in% hdi_unique)]
+hdi_unique[!(hdi_unique %in% proc_unique)]
+
+```
+## Preliminary Analysis
+
+### 4 a. 
+
+
+```{r preliminary_4a}
+
+# start filtering
+dim(proc_df)
+
+# remove all under 18
+proc_age_filtered <- subset(proc_df, Age >= 18)
+dim(proc_age_filtered)
+# generate frequency table
+counts1 <- as.data.frame(table(proc_age_filtered$Age))
+colnames(counts1) <- c("Age", "Frequency")
+
+kable(counts1, "html", caption = "Age over 18", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+# remove aged 80
+proc_age_filtered <- subset(proc_age_filtered, Age != 80)
+dim(proc_age_filtered)
+# generate frequency table
+counts1 <- as.data.frame(table(proc_age_filtered$Age))
+colnames(counts1) <- c("Age", "Frequency")
+
+kable(counts1, "html", caption = "Age over 18", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+```
+
+## 4. b.
+
+# TODO comment on shapes of distributions
+
+```{r preliminary_4b}
+library(ggplot2)
+
+
+# start filtering
+dim(proc_df)
+
+# remove all under 18
+proc_age_filtered <- subset(proc_df, Age >= 18)
+dim(proc_age_filtered)
+# generate frequency table
+counts1 <- as.data.frame(table(proc_age_filtered$Age))
+colnames(counts1) <- c("Age", "Frequency")
+
+kable(counts1, "html", caption = "Age over 18", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+ggplot(data = counts1) + geom_bar(aes(x = counts1$Age, y = counts1$Frequency), stat = "identity")
+
+#income
+counts_Income <- as.data.frame(table(proc_age_filtered$AnnualInc))
+colnames(counts_Income) <- c("Income", "Frequency")
+kable(counts_Income, "html", caption = "Income of those Age over 18", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+ggplot(data = counts_Income) + geom_bar(aes(x = counts_Income$Income, y = counts_Income$Frequency), stat = "identity")
+
+# HDI
+counts_HDI <- as.data.frame(table(proc_age_filtered$HDI))
+colnames(counts_HDI) <- c("HDI", "Frequency")
+kable(counts_HDI, "html", caption = "HDI counts of those Age over 18", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+ggplot(data = counts_HDI) + geom_bar(aes(x = counts_HDI$HDI, y = counts_HDI$Frequency), stat = "identity")
+ggplot(data = proc_age_filtered, aes(proc_age_filtered$HDI)) + geom_histogram(bins = 35)
+
+# descriptive stats
+
+## subset filtered data
+df <- proc_age_filtered
+
+summary_df <- df[ , c( match("Age",names(df)),
+                match("AnnualInc",names(df)),
+                match("HDI",names(df)),
+                match("DPMean",names(df)),
+                match("AIPMean",names(df)),
+                match("GPMean",names(df)),
+                match("SWLSMean",names(df)) ) ]
+
+## get some statistics of each coliumn
+medians <- apply(summary_df, 2, function(x) round( median(x,na.rm=TRUE), 2) )
+mins    <- apply(summary_df, 2, function(x) round( min(x, na.rm=TRUE ), 1) )
+means   <- apply(summary_df, 2, function(x) round( mean(x,na.rm=TRUE), 2) )
+sds     <- apply(summary_df, 2, function(x) round( sd(x,na.rm=TRUE), 2) )
+q1s     <- apply(summary_df, 2, function(x) round( quantile(x,0.25,na.rm=TRUE ), 1) )
+q3s     <- apply(summary_df, 2, function(x) round( quantile(x,0.75,na.rm=TRUE ), 1) )
+maxs    <- apply(summary_df, 2, function(x) round( max(x, na.rm=TRUE ), 0) )
+
+summary_stats <- cbind(mins, medians, means, maxs,q1s,q3s,sds)
+
+kable(summary_stats, "html", caption = "Summary Statistics (over 18)", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+
+
+```
+
+## gender, work status, occupation
+
+# TODO remove NAs, reduce occupation
+
+
+```{r preliminary_4c}
+
+# Gender, Work Status, Occupation
+
+# generate frequency tables
+counts_gender <- as.data.frame(table(proc_age_filtered$Gender))
+colnames(counts_gender) <- c("Gender", "Frequency")
+
+counts_workstatus <- as.data.frame(table(proc_age_filtered$WorkStatus))
+colnames(counts_workstatus) <- c("Work Status", "Frequency")
+
+counts_occupation <- as.data.frame(table(proc_age_filtered$Occupation))
+colnames(counts_occupation) <- c("Occupation", "Frequency")
+
+kable(counts_gender, "html", caption = "Gender for those over 18", row.names=FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+kable(counts_workstatus, "html", caption = "Gender and Work Status for those over 18", row.names=FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+kable(counts_occupation, "html", caption = "Occupation", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+```
+
+## 4 d.
+
+```{r preliminary_4d}
+
+# generate frequency tables
+counts_country <- as.data.frame(table(proc_age_filtered$Country))
+colnames(counts_country) <- c("Country", "Frequency")
+counts_country <- counts_country[ order(counts_country$Frequency, decreasing = TRUE), ]
+
+kable(counts_country, "html", caption = "Counts by Country", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+```
+
+
+## 4 e.
+
+```{r preliminary_4e}
+
+# generate frequency tables
+df_4e <- proc_age_filtered[, c(60, 61)] 
+
+df_4e$matched <- "missing"
+df_4e$matched [df_4e$UProcrast=="yes" & df_4e$OthersProc=="yes"] <- "yes/yes"
+df_4e$matched [df_4e$UProcrast=="yes" & df_4e$OthersProc=="no"] <- "yes/no"
+df_4e$matched [df_4e$UProcrast=="no" & df_4e$OthersProc=="yes"] <- "no/yes"
+df_4e$matched [df_4e$UProcrast=="no" & df_4e$OthersProc=="no"] <- "no/no"
+
+counts_q4e <- as.data.frame(table(df_4e$matched))
+colnames(counts_q4e) <- c("UProc/OProc", "Frequency")
+
+kable(counts_q4e, "html", caption = "Counts by Country", row.names=TRUE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = F, position = "left") 
+
+
+```
+
+## 5 .
+
+```{r deeper_5b}
+
+library(dplyr)
+library(RColorBrewer)
+
+country_sort    <- group_by(proc_age_filtered, proc_age_filtered$Country)
+countryAIPMean  <- summarise(country_sort, CAIPMean = mean(AIPMean)) 
+countryAIPMean  <- rename(countryAIPMean, "Country" = "proc_age_filtered$Country")
+country_aip_category <- merge(countryAIPMean, hdi_df, by = c("Country"))
+order_country   <- country_aip_category[ order(-country_aip_category$CAIPMean),]
+the_countries <- head(order_country, n = 15)
+
+ggplot(data = the_countries, aes(x=reorder(Country, -CAIPMean), y=CAIPMean, fill=HDI_Category)) +
+  geom_bar(stat = "identity")+
+  scale_fill_brewer(palette= "Dark2") +
+  theme(axis.text.x=element_text(angle=90,vjust=0.5)) + xlab("Country") +
+  ylab("AIPMean") + ggtitle("AIP Mean by Top 15 Countries")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+
+```
+
+
+```{r deeper_5c}
+
+country_sort    <- group_by(proc_age_filtered, proc_age_filtered$Country)
+countryDPMean  <- summarise(country_sort, CDPMean = mean(DPMean)) 
+countryDPMean  <- rename(countryDPMean, "Country" = "proc_age_filtered$Country")
+country_dp_category <- merge(countryDPMean, hdi_df, by = c("Country"))
+order_country   <- country_dp_category[ order(-country_dp_category$CDPMean),]
+the_countries <- head(order_country, n = 15)
+
+ggplot(data = the_countries, aes(x=reorder(Country, -CDPMean), y=CDPMean, fill=HDI_Category)) +
+  geom_bar(stat = "identity")+
+  scale_fill_brewer(palette= "Dark2") +
+  theme(axis.text.x=element_text(angle=90,vjust=0.5)) + xlab("Country") +
+  ylab("DPMean") + ggtitle("DP Mean by Top 15 Countries")+
+  theme(plot.title = element_text(hjust = 0.5))
+
+```
+
+## relationship between age and income
+
+## TODO remove NAs
+
+
+```{r deeper_5d}
+
+ggplot(data=subset(proc_age_filtered, !is.na(Gender)), aes(x = Age, y = AnnualInc, color=Gender)) + 
+  geom_point(size = 2, na.rm=TRUE) + 
+  geom_smooth(method=lm, se=FALSE, size = 2, na.rm=TRUE) +
+  labs(title = "Is there a relationship between age and income by gender") 
+
+```
+
+## relationship between Life Satisfaction and HDI
+
+## TODO remove NAs
+
+
+
+```{r deeper_5e}
+
+ggplot(proc_age_filtered, aes(x = HDI, y = SWLSMean)) + 
+  geom_point(colour = 'green', size = 2, na.rm=TRUE) + 
+  geom_smooth(method=lm, se=FALSE, size = 2, na.rm=TRUE) +
+  labs(title = "Relationship between Life Satisfaction and HDI") 
+
+ggplot(proc_age_filtered, aes(x = HDI_Category, y = SWLSMean)) + 
+  geom_bar(stat = "identity", fill='blue', na.rm=TRUE) 
+
+```
+
+
