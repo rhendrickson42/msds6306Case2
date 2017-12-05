@@ -8,4 +8,11 @@ Directory Structure
 -<Presentation>
 -<tidy>
 
+
+[Project Codebook](codebook.md) <- Project Cookbook
+
+[Data](Data)
+
+
 codebook.Rmd
+
