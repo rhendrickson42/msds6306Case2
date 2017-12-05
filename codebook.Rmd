@@ -84,7 +84,7 @@ p_list2 <- c("DPMean", "AIPMean", "GPMean", "SWLSMean", "HDI", "HDI_Category")
 p_list3 <- c("Individuals average decisional procrastination",
              "Individauls average procrastination behavior",
              "Individuals average generalized procrastination",
-             "Individuals average lisfe satisfaction",
+             "Individuals average life satisfaction",
              "Individuals country HDI",
              "Individuals country HDI Category")
 

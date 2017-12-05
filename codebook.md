@@ -906,7 +906,7 @@ p_list2 <- c("DPMean", "AIPMean", "GPMean", "SWLSMean", "HDI", "HDI_Category")
 p_list3 <- c("Individuals average decisional procrastination",
              "Individauls average procrastination behavior",
              "Individuals average generalized procrastination",
-             "Individuals average lisfe satisfaction",
+             "Individuals average life satisfaction",
              "Individuals country HDI",
              "Individuals country HDI Category")
 
@@ -976,7 +976,7 @@ kable(list(p_list1, p_list2, p_list3), "html", caption = "Procrastination Data -
 <td style="text-align:left;"> Individuals average generalized procrastination </td>
   </tr>
 <tr>
-<td style="text-align:left;"> Individuals average lisfe satisfaction </td>
+<td style="text-align:left;"> Individuals average life satisfaction </td>
   </tr>
 <tr>
 <td style="text-align:left;"> Individuals country HDI </td>
