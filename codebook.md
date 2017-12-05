@@ -19,8 +19,14 @@ data_setup_HDI_script <- here("scripts", "clean_data_randy2.R")
 source(data_setup_HDI_script)
 ```
 
-## Original Procrastination Dataframe (tidied up a bit for documentation)
+## Referenced documentation
 
+### Human Development Index Tables
+[HDI Tables](presentation/HDI_Tables.md)
+
+
+
+## Original Procrastination Dataset (tidied up a bit for documentation)
 
 
 ```r
@@ -889,8 +895,6 @@ kable(list(pdf_rows, pdf_columns, pdf_descriptions), "html", caption = "Procrast
   </tr></tbody>
 </table>
 
-## Human Development Index Tables
-[HDI Tables](presentation/HDI_Tables.md)
 
 ## TODO - add columns from 2. e.
 
