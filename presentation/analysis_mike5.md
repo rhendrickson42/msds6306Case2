@@ -30,6 +30,21 @@ read_chunk(script1)
 
 ## Question 5
 
+#### The Top 15 Nations in Average AIP Score
+Macau, Taiwan, Dominican Republic, Cyprus, Qatar, Panama, Puerto Rico, Iceland, Ecuador, Sri Lanka, Columbia, Kenya, Turkey, Uruguay, France
+
+#### The Top 15 Nations in Average GP Score
+Taiwan, Puerto Rico, Qatar, Panama, Myanmar, Sri Lanka, Poland, Austria, Turkey, Ecuador, France, Malaysia, Slovenia, Uruguay, Iceland
+
+#### The following Nations appear in both Top 15 Nations in AIP and Top 15 Nations in GP
+Ecuador, France, Iceland, Panama, Puerto Rico, Qatar, Sri Lanka, Taiwan, Turkey, Uruguay 
+
+#### There is a relationship and trend between Age and Income. The older the Age, the higher the income.
+
+#### There doesn't seem to be a discernible relationship between Life Satisfaction and HDI.
+
+
+
 
 ```r
 library(knitr)
