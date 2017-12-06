@@ -10,7 +10,7 @@ There is a quote associated with actor Christopher Parker concerning procrastina
 
 Procrastinators should not be shamed, they should be embraced. We are developing a set of new Credit and Gift cards targeting procrastinators. These customers don't want to deal with short deadlines. If they forget a payment, no problem. If they forget to redeem a gift card, no problem. We have a product for that. 
 
-With this strategy, the bank president suggested they use some of the company's new Procrastination data, along with the Human Develoopment Index to help select which markets they should first approach with the new company product line.
+With this strategy, the bank president suggested they use some of the company's new Procrastination data, along with the Human Development Index to help select which markets they should first approach with the new company product line.
 
 
 
