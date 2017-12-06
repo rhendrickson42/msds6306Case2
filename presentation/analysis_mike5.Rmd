@@ -1,0 +1,41 @@
+---
+title: "Analysis 5A"
+author: "Randall Hendrickson"
+date: "December 5, 2017"
+output: 
+   html_document:
+      keep_md: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Procrastination Analysis
+
+```{r analysis}
+library(here)
+library(knitr)
+library(kableExtra)
+script1 <- here("scripts", "AnalysisMikeQ5.R")
+read_chunk(script1)
+```
+
+
+```{r analysis_header}
+
+# The Procrastination Analysis script wrapped in a RMD document
+
+```
+
+## Question 5
+
+```{r analysis_mike_q5_a}
+## @knitr analysis_mike_q5_a
+```
+
+### Reproducible research show sessionInfo
+
+```{r sessionInfo}
+sessionInfo()
+```

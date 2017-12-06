@@ -1,3 +1,4 @@
+## @knitr analysis_mike_q4_ab
 library(knitr)
 library(ggplot2)
 library(dplyr)
@@ -75,6 +76,7 @@ unique(df2$SWLSMean)
 ggplot(df2, aes(SWLSMean)) + 
   geom_histogram(bins=20)
 
+## @knitr analysis_mike_q4_cd
 
 ## 4C/D tables for frequency 
 ## might want to make a function to do this quicker
