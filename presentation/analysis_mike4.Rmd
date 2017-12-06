@@ -30,6 +30,13 @@ read_chunk(script1)
 
 ## Question 4a and 4b
 
+### 4. b. 
+
+#### The Age distribution below is skewed right with most participants less than 45.
+
+#### The Income distribution below is skewed right with most participants earning less than 100k.
+
+
 ```{r analysis_mike_q4_ab}
 ```
 
