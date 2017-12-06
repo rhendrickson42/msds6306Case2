@@ -61,6 +61,24 @@ Notes on occupations from procrastination data. The procrastination dataset occu
  - Analysis Question4 [Question4](https://github.com/rhendrickson42/msds6306Case2/blob/master/presentation/analysis_mike4.md)
  - Analysis Question5 [Question5](https://github.com/rhendrickson42/msds6306Case2/blob/master/presentation/analysis_mike5.md)
  
+### Conclusion
+
+The Shareholders at Gringotts Wizarding Bank rejoice! From our analysis above we have found the following Top Nations in Average AIP and Average GP Scores.
+
+The Top 15 Nations in Average AIP Score
+
+ * Macau, Taiwan, Dominican Republic, Cyprus, Qatar, Panama, Puerto Rico, Iceland, Ecuador, Sri Lanka, Columbia, Kenya, Turkey, Uruguay, France
+
+The Top 15 Nations in Average GP Score
+
+ * Taiwan, Puerto Rico, Qatar, Panama, Myanmar, Sri Lanka, Poland, Austria, Turkey, Ecuador, France, Malaysia, Slovenia, Uruguay, Iceland
+
+The following Nations appear in both Top 15 Nations in AIP and Top 15 Nations in GP
+
+ * Ecuador, France, Iceland, Panama, Puerto Rico, Qatar, Sri Lanka, Taiwan, Turkey, Uruguay
+
+With the HDI scores and the mix of nations above, we recommend using the Nation of Qatar for our prototype financial products targeting procrastinators.
+
 
 ### Contact Information:
 
