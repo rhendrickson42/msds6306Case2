@@ -8,7 +8,7 @@ Michael and Randall are partners at Gringotts Wizarding Bank. After a major fina
 
 There is a quote associated with actor Christopher Parker concerning procrastination. "Procrastination is like a credit card: it's a lot of fun until you get the bill." Using credit without budgeting can be quite a surprise at bill time. We want to help out in that area.
 
-Procrastinators should not be shamed, they should be enbraced. We are developing a set of new Credit and Gift cards targeting procrastinators. These customers don't want to deal with short deadlines. If they forget a payment, no problem. If they forget to redeem a gift card, no problem. We have a product for that. 
+Procrastinators should not be shamed, they should be embraced. We are developing a set of new Credit and Gift cards targeting procrastinators. These customers don't want to deal with short deadlines. If they forget a payment, no problem. If they forget to redeem a gift card, no problem. We have a product for that. 
 
 With this strategy, the bank president suggested they use some of the company's new Procrastination data, along with the Human Develoopment Index to help select which markets they should first approach with the new company product line.
 
@@ -65,7 +65,7 @@ Notes on occupations from procrastination data. The procrastination dataset occu
 ### Contact Information:
 
 ```r
-Michael, 
+Michael, mblandrum # smu.edu
 Randall, rhendrickson # smu.edu
 
 ```
