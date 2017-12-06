@@ -58,8 +58,9 @@ Notes on occupations from procrastination data. The procrastination dataset occu
 
 ### Analysis
 
- - Analysis Question4 [Question4](https://github.com/rhendrickson42/msds6306Case2/blob/master/presentation/analysis_mike4.md)
- - Analysis Question5 [Question5](https://github.com/rhendrickson42/msds6306Case2/blob/master/presentation/analysis_mike5.md)
+ - Analysis [Question4](https://github.com/rhendrickson42/msds6306Case2/blob/master/presentation/analysis_mike4.md)
+ - Analysis [Question5](https://github.com/rhendrickson42/msds6306Case2/blob/master/presentation/analysis_mike5.md)
+ - Additional [Analysis](https://github.com/rhendrickson42/msds6306Case2/blob/master/presentation/analysis.md) 
  
 ### Conclusion
 
