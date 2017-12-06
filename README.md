@@ -52,7 +52,9 @@ library(tidytext)
 
 ```
 
-## More info
+### Notes
+
+Notes on occupations from procrastination data. The procrastination dataset occupation column appears to be entered "free form"" and in a non-structured way. This resulted in over 600 different occupations. One way to reduce this is to make the occupation come from a standardized set of occupations with no variations on case. For this study, we reclassified occupations containing "analyst, insurance, medical, postdoc, research, sales, student, writer" as those occupations respectively. We could have also expaned the set to further reduce it, or combine those occupations which fall below a certain count to "other".
 
 ### Contact Information:
 

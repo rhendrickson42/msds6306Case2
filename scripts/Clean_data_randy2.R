@@ -106,6 +106,26 @@ question2_c <- function(df) {
   p_df$Occupation[p_df$Occupation == "please specify"] <- NA
   p_df$Occupation[p_df$Occupation == 0] <- NA
   p_df$Occupation[p_df$Occupation == ""] <- NA
+  
+  # ESL Teacher should be a teacher
+  p_df$Occupation[grep("teacher", p_df$Occupation, ignore.case = TRUE)] <- "teacher"
+
+  # reduce some occupations that are very similar
+  p_df$Occupation[grep("analyst", p_df$Occupation, ignore.case = TRUE)] <- "analyst"
+  p_df$Occupation[grep("insurance", p_df$Occupation, ignore.case = TRUE)] <- "insurance"
+  p_df$Occupation[grep("medical", p_df$Occupation, ignore.case = TRUE)] <- "medical"
+  p_df$Occupation[grep("postdoc", p_df$Occupation, ignore.case = TRUE)] <- "postdoc"
+  p_df$Occupation[grep("research", p_df$Occupation, ignore.case = TRUE)] <- "research"
+  p_df$Occupation[grep("sales", p_df$Occupation, ignore.case = TRUE)] <- "sales"
+  p_df$Occupation[grep("self", p_df$Occupation, ignore.case = TRUE)] <- "self_employed"
+  p_df$Occupation[grep("student", p_df$Occupation, ignore.case = TRUE)] <- "student"
+  p_df$Occupation[grep("writer", p_df$Occupation, ignore.case = TRUE)] <- "writer"
+  p_df$Occupation[grep("IT", p_df$Occupation, ignore.case = TRUE)] <- "IT"
+
+  # look for some occupations to help reduce, create temp count
+  # tcnt <- get_counts_df_vector(p_df$Occupation, c1name = "occupation")
+  # reclassify those which are less than some count
+  # p_df$Occupation[which(tcnt$frequency < 3)] <- "misc"
 
   # ---------------------------------------  
   # 2. d. 
@@ -119,11 +139,21 @@ question2_c <- function(df) {
   p_df$GPMean   <- rowMeans( p_df[,c(35:54)] )
   p_df$SWLSMean <- rowMeans( p_df[,c(55:59)] )
 
-  # TODO remove when not needed for verification
+  # save dt after 2.e for verification
   step2_datafile <- here("outputdata", "question_2e_dataframe.csv")
   write.csv(p_df, step2_datafile, row.names=FALSE)
   
   return(p_df)
+}
+
+# utility function - quick counts table
+# ex. counts_occupation <- get_counts_df_vector(proc_age_filtered$Occupation, "Occupation", "Frequency")
+# then kable(counts_occupation), or str(counts_occupation)
+#
+get_counts_df_vector <- function(x, c1name="variable", c2name="frequency") {
+  counts_vec <- as.data.frame(table(x))
+  colnames(counts_vec) <- c(c1name, c2name)
+  return(counts_vec)
 }
 
 ### =======================================          
