@@ -78,6 +78,8 @@ The following Nations appear in both Top 15 Nations in AIP and Top 15 Nations in
 
  * Ecuador, France, Iceland, Panama, Puerto Rico, Qatar, Sri Lanka, Taiwan, Turkey, Uruguay
 
+People procrastinate in paying bills, redeeming gift certificates and gift cards with long deadlines than those with short deadlines, resulting in lower redemption rates for the long deadlines. 
+
 With the HDI scores and the mix of nations above, we recommend using the Nation of Qatar for our prototype financial products targeting procrastinators.
 
 
