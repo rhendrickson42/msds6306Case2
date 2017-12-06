@@ -123,11 +123,6 @@ $(document).ready(function () {
 </div>
 
 
-<p>procrastination 4264 61</p>
-<p>2.e 4264 65</p>
-<ol start="3" style="list-style-type: decimal">
-<li>4264 ??</li>
-</ol>
 <pre class="r"><code>  hdi_datafile &lt;- here(&quot;outputdata&quot;, &quot;HDI_By_Countries.csv&quot;)
   hdi_df &lt;- read.csv(hdi_datafile, stringsAsFactors = FALSE)
 
@@ -1250,8 +1245,8 @@ HDI_Category
 </tr>
 </tbody>
 </table>
-<div id="temporary-to-verify-data" class="section level2">
-<h2>Temporary to verify data</h2>
+<div id="verify-data" class="section level2">
+<h2>Verify data</h2>
 <pre class="r"><code># generate frequency table
 counts &lt;- as.data.frame(table(proc_df$Country))
 colnames(counts) &lt;- c(&quot;Country&quot;, &quot;Frequency&quot;)
@@ -2682,9 +2677,6 @@ Frequency
 </div>
 <div id="b." class="section level2">
 <h2>4. b.</h2>
-</div>
-<div id="todo-comment-on-shapes-of-distributions" class="section level1">
-<h1>TODO comment on shapes of distributions</h1>
 <pre class="r"><code>library(ggplot2)
 
 
@@ -4063,12 +4055,9 @@ SWLSMean
 </tr>
 </tbody>
 </table>
-<div id="gender-work-status-occupation" class="section level2">
-<h2>gender, work status, occupation</h2>
 </div>
-</div>
-<div id="todo-remove-nas-reduce-occupation" class="section level1">
-<h1>TODO remove NAs, reduce occupation</h1>
+<div id="d.-gender-work-status-occupation" class="section level2">
+<h2>4. d. gender, work status, occupation</h2>
 <pre class="r"><code># Gender, Work Status, Occupation
 
 # generate frequency tables
@@ -11360,6 +11349,7 @@ yoga teacher
 </tr>
 </tbody>
 </table>
+</div>
 <div id="d." class="section level2">
 <h2>4 d.</h2>
 <pre class="r"><code># generate frequency tables
@@ -12426,9 +12416,6 @@ ggplot(data = the_countries, aes(x=reorder(Country, -CDPMean), y=CDPMean, fill=H
 </div>
 <div id="relationship-between-age-and-income" class="section level2">
 <h2>relationship between age and income</h2>
-</div>
-<div id="todo-remove-nas" class="section level2">
-<h2>TODO remove NAs</h2>
 <pre class="r"><code>ggplot(data=subset(proc_age_filtered, !is.na(Gender)), aes(x = Age, y = AnnualInc, color=Gender)) + 
   geom_point(size = 2, na.rm=TRUE) + 
   geom_smooth(method=lm, se=FALSE, size = 2, na.rm=TRUE) +
@@ -12437,9 +12424,6 @@ ggplot(data = the_countries, aes(x=reorder(Country, -CDPMean), y=CDPMean, fill=H
 </div>
 <div id="relationship-between-life-satisfaction-and-hdi" class="section level2">
 <h2>relationship between Life Satisfaction and HDI</h2>
-</div>
-<div id="todo-remove-nas-1" class="section level2">
-<h2>TODO remove NAs</h2>
 <pre class="r"><code>ggplot(proc_age_filtered, aes(x = HDI, y = SWLSMean)) + 
   geom_point(colour = 'green', size = 2, na.rm=TRUE) + 
   geom_smooth(method=lm, se=FALSE, size = 2, na.rm=TRUE) +
@@ -12448,7 +12432,6 @@ ggplot(data = the_countries, aes(x=reorder(Country, -CDPMean), y=CDPMean, fill=H
 <pre class="r"><code>ggplot(proc_age_filtered, aes(x = HDI_Category, y = SWLSMean)) + 
   geom_bar(stat = &quot;identity&quot;, fill='blue', na.rm=TRUE) </code></pre>
 <p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAMAAABNUi8GAAABqlBMVEUAAAAAADoAAGYAAP8AOpAAZrYzMzM6AAA6ADo6AGY6kNtNTU1NTVlNTV5NTWNNTWRNTW5NTW9NTXlNTYNNTY5NXp1NY6tNbo5Nbp1NbqtNb7VNg45NjqtNjshTTYNTXp1ZTWRZTW9eTVleTY5eaateneRjTY5jbqtkTU1kTW5kZE1kb01kq+RmAABmADpmZgBmkJBmtv9pTVluTU1uTW5uTW9uTYNuTY5ubqtujshuq6tuq8huq+RvTU1vTY55TU15jo5/aW6DTVOOTU2OTV6OTWSOTWmOTW6OTY6Obk2Obm6ObquOjk2Ojm6Oq6uOyOSOyP+O5MiO5P+QOgCQkDqQkGaQtpCQ27aQ2/+dbk2dnW6i//+rbk2rbmSrbm6rjk2rq26rq46ryI6ryKurzaur5Mir5OSr5P+1bk21//+2ZgC22/+2/9u2///IeU3Ig03Ijk3Ijm7I5KvI/8jI/+TI///bkDrb/7bb///knV7kq27k/7Xk/+Tk///r6+v/tW7/tmb/yI7/25D/27b/29v/5I7/5J3/5Kv//7X//7b//8j//9v//+T///9NoGYmAAAACXBIWXMAAA7DAAAOwwHHb6hkAAATNElEQVR4nO2di38b2UFGnXi9YS2goYSHgdAHtDwDmCyNCy4vAzFbWkzDI1CzpVAwawi4W2QWg6htaE0Uz//M3NGMNJ8s2dJI4/sl95xft6OMpJuj0dG8LE9WMgBjVmILAFwHgYI1BArWEChYQ6BgDYGCNYsF+t+t0NKwjTHzMdNpyYdAZ8fMx0yHQKNj5mOmQ6DRMfMx0yHQ6Jj5mOkQaHTMfMx0CDQ6Zj5mOgQaHTMfMx0CjY6Zj5kOgUbHzMdMh0CjY+ZjpkOg0THzMdMh0OiY+ZjpEGh0zHzMdAg0OmY+ZjoEGh0zHzMdAo2OmY+ZDoFGx8zHTIdAo2PmY6ZDoNEx81myzmp0Jr9KAp0ZMx8CJVDFzIdACVQx8yFQAlXMfAiUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQAlUMfMhUAJVzHwIlEAVMx8CJVDFzIdACVQx8yFQAlXMfAiUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQCElYue5unqtHmvQmzHzYQ1KoIqZD4ESqGLmQ6AEqpj5ECiBKmY+BEqgipkPgRKoYuZDoASqmPkQKIEqZj4ESqCKmQ+BEqhi5kOgBKqY+RAogSpmPgRKoIqZD4ESqGLmQ6AEqpj5ECiBKmY+BEqgipkPgRKoYuZDoASqmPkQKIEqZj4ESqCKmQ+BEqhi5kOgBKqY+RAogSpmPgRKoIqZD4ESqGLmQ6AEqpj5ECiBKmY+BEqgipkPgRKoYuZDoASqmPkQKIEqZj4ESqCKmQ+BEqhi5kOgBKqY+RAogSpmPgRKoIqZD4ESqGLmQ6AEqpj5ECiBKmY+BEqgipkPgRKoYuZDoASqmPkQKIEqZj4ESqCKmQ+BEqhi5kOgBKqY+RBoxcXjzoNulvV3Ohu98QmBRoNAS/o7e9nJRu9yP588zHRCoPEg0GoFutXL+k8P+rvd7OJJVycEGg8C1UAnTvK7386Z/mR4XYid5+rqtXo3beLvH5xtFEnqpHzIcj/Lww9PO8M2xsyHNWhFfpD0G+9PXYMSaCQItL4W3e2yD2rmQ6BVnPmKsjhu3746IdB4EGjFWWfCCVDOg8aGQGdnuYtq6NbOsI0x8yFQAlXMfAiUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQAlUMfMhUAJVzHwIlEAVMx8CJVDFzIdACVQx8yFQAlXMfAiUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQAlUMfMhUAJVzHwIlEAVMx8CJVDFzIdACVQx8yFQAlXMfAiUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQAlUMfMhUAJVzHwIlEAVMx8CJVDFzIdACVQx8yFQAlXMfAiUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQAlUMfMhUAJVzHwIFFIidp6rq9fqsQa9GTMf1qAEqpj5ECiBKmY+BEqgipkPgRKoYuZDoASqmPkQKIEqZj4ESqCKmQ+BEqhi5kOgBKqY+RAogSpmPgRKoIqZD4ESqGLmQ6AEqpj5ECiBKmY+BEqgipkPgRKoYuZDoASqmPkQKIEqZj4ESqCKmQ+BEqhi5kOgBKqY+RAogSpmPgRKoIqZD4ESqGLmQ6AEqpj5ECiBKmY+BEqgiplPwoGe31sJ3H1BoHXMfNIN9NWzNdagEzDzSTfQl482CXQCZj7pBvrqGYFOwswn3UCz09n3Pgk0GukG+vLRCgdJEzDzSTfQ+Vnuohq6tTNsY8x8CJRAFTOfhAPlPOhEzHzSDfTVs/X8QH6ek03LXVRDt3aGbYyZT7qBhjQP17PTtz4i0DpmPmkHerw2z8mm5S6qoVs7wzbGzCfdQLPDos5j1qCKmU/CgeY7odnhyp3ns/ZJoDFIONC5We6iGrq1M2xjzHwIlEAVM5+UAz1eWdmcYxeUQGOQcKCHb/37o815vhW63EU1dGtn2MaY+aQb6MtHxVl6TjONYeZDoASqmPmkG2h2HDbxLx+tz9ongcYg4UCz0/BdkWGfl/ud+wdZ1t/pbPTGJwQajZQDVY72srON3uX+XnbyMNMJgcaDQEv6u91qcvGkqxMCjQeBllxsfS1s4i+2eln/6YFO8rvfzrlm9QuvCbHzXF29Vu+6QB/vhTrzrXxIUiflQ5b7WR5+eNoZtjFmPomuQV89W6koTzNNXHWO1qAEGolEAw1H8PpV+v4XixbZBzXzSTXQnENt9KjYxF/ubw8O3+sTAo1HwoEONvTDRvs7nQddzoO6+SQdaNEoP+pUzHySDjRfg87xhXoCjUG6gc5ZJ4HGIdVAT+etk0DjkGigV8+DEmiJmU+igTZiuYtq6NbOsI0x8yFQAlXMfJIN9DjfBw2XCJ39+8oEGoNUAz3N+wy/MMc36scx80k00HBVkez83mb4xQ8ufSOY+SQaaHHVxbAW5ZfmxjHzSTnQYuVJoGOY+SQaaPg3aAbXbDhkE6+Y+SQaaFh7FrugpytcYVkx80k10PBt0PV8JcqXRcYx80k20AYsd1EN3doZtjFmPskHykHSGGY+BEqgipkPgRKoYuZDoASqmPkQKIEqZj4ESqCKmU+igVb/FjffqL+CmU+ygc7eJYHGJNFAww+S5ll5EmgsUg00UPx73HNEutxFNXRrZ9jGmPmkHGjBMfugiplP0oGGXz7md5LGMPNJONB8N3SOf2aOQOOQaqDHK/NfWmS5i2ro1s6wjTHzSTTQ4lc+5mW5i2ro1s6wjTHzSTTQsPs595nQ5S6qoVs7wzbGzCfVQLPiLNPs/5AsgUYi4UCzsCfKr3yMY+aTdqBcYfkqZj4pB8pPkiZh5pNooIPrg/Kz+AmY+SQaKN9mmoqZT6KBNmK5i2ro1s6wjTHzSTZQrg86BTOfVAPl+qDTMPNJNFCuDzoVM59EA+X6oFMx80k5UK4POgkzn0QD5fqgUzHzSTRQrg86FTOfVANtcn1QeP2Jnefq6rV6nKi/GTOfZNegBDoFMx8CJVDFzIdACVQx8yFQAlXMfAiUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQAlUMfMhUAJVzHwIlEAVMx8CJVDFzIdACVQx8yFQAlXMfAiUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQAlUMfMhUAJVzHwIlEAVMx8CJVDFzIdACVQx8yFQAlXMfAiUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQAlUMfMhUAJVzHwIlEAVMx8CJVDFzIdACVQx8yFQAlXMfAiUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQAlUMfMh0IqzTudBN8v6O52N3viEQKNBoCUXT7rZycPscn/v6oRA40GgGml/t3t1QqDxINAa+cryYquX9Z8e6CS/6+2c658MrwOx81xdvVbv2kAvHt8/yM42iiR1Uj5guZ/l4YennWEbY+bDGrTGlVXnaA1KoJEg0DpHe+yDmvkQaEm5Nb/c3x4cvtcnBBoPAq046XTyfVDOg5r5EOjsLHdRDd3aGbYxZj4ESqCKmQ+BEqhi5kOgBKqY+RAogSpmPgRKoIqZD4ESqGLmQ6AEqpj5ECiBKmY+BEqgipkPgRKoYuZDoASqmPkQKIEqZj4ESqCKmQ+BEqhi5kOgBKqY+RAogSpmPgRKoIqZD4ESqGLmQ6AEqpj5ECiBKmY+BEqgipkPgRKoYuZDoASqmPkQKIEqZj4ESqCKmQ+BEqhi5kOgBKqY+RAogSpmPgRKoIqZD4ESqGLmQ6AEqpj5ECiBKmY+BEqgipkPgRKoYuZDoASqmPkQKIEqZj4ESqCKmQ+BEqhi5kOgBKqY+RAogSpmPgRKoIqZD4ESqGLmQ6AEqpj5ECiBKmY+BEqgipkPgUJKxM5zdfVaPdagN2PmwxqUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQAlUMfMhUAJVzHwIlEAVMx8CJVDFzIdACVQx8yFQAlXMfAiUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQAlUMfMhUAJVzHwIlEAVMx8CJVDFzIdACVQx8yFQAlXMfAiUQBUzHwIlUMXMh0AJVDHzIVACVcx8CJRAFTMfAiVQxcyHQAlUMfMhUAJVzHwIlEAVMx8CJVDFzIdACVQx8yFQAlXMfAiUQBUzHwIlUMXMh0AJVHnTijDTIdBFIdDb9KkWOoHODIHepk+10NsLNPbrnfKKm0Ogt+lTLXQCnRkCvU2faqET6MwQ6G36VAudQGeGQG/Tp1roBDozBHqbPtVCJ9CZIdDb9KkWetNA+zudjR6BLkDspfNmB3q5v5edPCTQBYi9dN7sQPu73eziSZdAmxN76bzZgV5s9bL+04P81ts5cz4ZYF7mDfRsowo0sNxVy/DD086wjTHzMdNpyadpoKM1KIFGwkzHLNAZ9kEXd2tn2MaY+ZjpmAV6ub9901H84m7tDNsYMx8zHbNAZzgPurhbO8M2xszHTMctUKEVtUTegcaY6RBodMx8zHQINDpmPmY6BBodMx8zHQKNjpmPmQ6BRsfMx0yHQKNj5mOmQ6DRMfMx0yHQ6Jj5mOkQaHTMfMx0CDQ6Zj5mOgQaHTMfMx0CjY6Zj5mOdaDt4PabJGY+Zjot+xDozZj5mOkQaHTMfMx0CDQ6Zj5mOgkGCjCEQMEaAgVrCBSsIVCwZrmBlpd0GF3ZYdKtWQgX0Zs6/Owi054SSUbHnDZAHDm/t25AK4FOmkGgM4w558DTB2oc6KQh3qhA/6jT2Sv+jv5O50feOyhn6F35f5fvf73T2T7L/8vveVzcsfW18pHFU/9wL0wedMO1oC7fPyhuV+Pmt/q7f9O5f5DVhykfUgwzuF293OJPYbldvHtQXP3sVmX++K+/0On8Yn12OWY+wASBtuU+0cv+7wudj/9W5/7P5MP8/Md/tvPgw62e41vXSqCPt0MBweYov3X/oJyhd4VXuf8wn/Mw3AyXIgvv1fCRxVPzF3wULrKTv8JwwbLidlaNu9Hr72z0zh7Uh8nKh4z+mmGgg6ec5Pfno55s37LMj/7ljz/5UGaXY9YCrT2zZbnvfvor2b9+ovePP5b9R2f74vEP9779k92zbcu3rpVAB68huO92w8ennCF3DT6G4TN0UF0oL3/06JHFU/f3wl35zdDVdnm7HDf/U39nLzy/NszoIdVfUxmVT8mX1Te/Xiy125X53HvfePJvMrscc5pAu3K/+5nwv9//ze53PvnVi3c/2/3Opz745oHlW9duoOX6faZXedQJGwR5ZHYU1vWdfFtwsfVfxWaiuD14fthuFM/bq7/K4UPGA62esvut3Q+ffGv3tmXqgY5m549vEOgS5H7vp/8z3+UIfO9XQqDf/fSffLFn+da1G+jsH8PwiRrdkY0+hkVK+aP+bqtX3q59DJ8ejH8Mhw+ZsgbNjr78+XzH52F2yzL1QAezm65BlyL3B7/zt5/6oLyIZgj04ld/e9vzrWs30GpHZvxVBr2TB/VXWdzxbu2RtR2ZsGdzEnajj2QHKezIPAyT+jt7VN9RqgdaDXTWGeyF3rJMLdBqlOE+6FWB9uX+qvML29m//FDv2z/wQRHor/3cgedb13Kg+Xr7JyZ8DHPpzq/vyluSzxkc01av8nK/OhTMj/aKQ+/ydjluOBR8+qXBoeBomNFDwsd8f/wofjDQ2YP6h/VWZD733j/s/+B79dnlmJMFWpf7xrt/v9P5/sed7/upYg16uf+xr3q+dW0EejXXlhhdhdwAK5lxbpS7+PykmTZvXVuB5h+l4kPUElZNWMmMc5PcyZV3yeut42fxYA2BgjUECtYQKFhDoGANgYI1BLoALx9thsnp3Revnq0E1vI/nX/P89pDjvO5d+oz/uefblXxtYdAF6Ae6Hp+49Wztz6SQIsZeaSbwzmaL9wIgS7AeKDFjHqCh6HPvNDBJECgc0KgC3Al0Ox4rZ5geX/B+b18Y78e/n89CzsEd1+E+1fu/Pk7L4o/53sH5+/86crdX14bDAMDCHQBrgZ6+tZHtUDHWz2++yLMevVsrVirvny0ns8PT14r5p3fWysGy/+weeXvShUCXYB8DVhQC3SQYMl5vnYs+d+wkc/vCveeDtaem8U0j7aYhmfe2yz3EkbPSx4CXYA51qD5XcXxfJh1PMh6vdg1zWM8LaaDeIvNO1v4EQS6AFcDPZy4D/ryl56/fHTneRVhdcw0OdDzd/6ZLfwIAl2AG4/iyxTDZjzcOh2sQU/LE6PVpr3483Dn4NWzX2ELP4JAF2CO86AhwvN7d56HpxRzT8PtsYOkwTOPV9jCjyDQBbjyk6RQqZ7pPKx+kpTfuPMX+eMPV9aK00phZjjN9Gd3R6eZBs8sjpWghEAjczo6iV/CMXwdAo1H2OwX50SV4/UYMq4Q6PIpfmg0/iWRSRyX3y/RJ19ZpSYNgYI1BArWEChYQ6BgDYGCNQQK1hAoWPP/I3KABd16RqoAAAAASUVORK5CYII=" /><!-- --></p>
-</div>
 </div>
 
 

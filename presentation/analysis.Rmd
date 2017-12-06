@@ -20,14 +20,6 @@ source(data_setup_HDI_script)
 ```
 
 
-procrastination
-4264   61
-
-2.e
-4264   65
-
-3.
-4264   ??
 
 ```{r analysis_setup}
 
@@ -57,7 +49,7 @@ procrastination
   
 ```
 
-## Temporary to verify data
+## Verify data
 
 ```{r analysis_step1}
 
@@ -112,7 +104,6 @@ kable(counts1, "html", caption = "Age over 18", row.names=TRUE) %>%
 
 ## 4. b.
 
-# TODO comment on shapes of distributions
 
 ```{r preliminary_4b}
 library(ggplot2)
@@ -181,9 +172,7 @@ kable(summary_stats, "html", caption = "Summary Statistics (over 18)", row.names
 
 ```
 
-## gender, work status, occupation
-
-# TODO remove NAs, reduce occupation
+## 4. d. gender, work status, occupation
 
 
 ```{r preliminary_4c}
@@ -293,9 +282,6 @@ ggplot(data = the_countries, aes(x=reorder(Country, -CDPMean), y=CDPMean, fill=H
 
 ## relationship between age and income
 
-## TODO remove NAs
-
-
 ```{r deeper_5d}
 
 ggplot(data=subset(proc_age_filtered, !is.na(Gender)), aes(x = Age, y = AnnualInc, color=Gender)) + 
@@ -306,10 +292,6 @@ ggplot(data=subset(proc_age_filtered, !is.na(Gender)), aes(x = Age, y = AnnualIn
 ```
 
 ## relationship between Life Satisfaction and HDI
-
-## TODO remove NAs
-
-
 
 ```{r deeper_5e}
 

@@ -5,14 +5,6 @@ December 1, 2017
 
 
 
-procrastination
-4264   61
-
-2.e
-4264   65
-
-3.
-4264   ??
 
 
 ```r
@@ -438,7 +430,7 @@ Afghanistan     55  Male     No Kids    deg         full-time         87500  NA 
 Albania         68  Male     Yes Kids   deg         part-time         87500  Media Consultant           4           0  Large-City     Divorced       0           2     4     3     2     2     1      4      1      5      1      2      1      1      3      2       3       3       1       3       1       5     4     1     2     2     3     2     2     2     4      1      2      4      4      4      4      4      4      3      4      4       3       4       3       5       4  yes         no               2.5   2.400000      3.0        3.8   0.764  high human development 
 Albania         45  Female   No Kids    ltuni       full-time        150000  NA                         0           0  Large Town     Single         0           0     3     3     5     3     3      3      1      2      1      2      2      2      2      1       2       3       2       2       1       5     5     3     2     2     5     4     5     5     5      1      3      4      5      5      5      4      3      4      4      4       3       3       3       4       2  yes         no               3.0   2.066667      3.9        3.0   0.764  high human development 
 
-## Temporary to verify data
+## Verify data
 
 
 ```r
@@ -1230,7 +1222,6 @@ kable(counts1, "html", caption = "Age over 18", row.names=TRUE) %>%
 
 ## 4. b.
 
-# TODO comment on shapes of distributions
 
 
 ```r
@@ -1927,9 +1918,7 @@ kable(summary_stats, "html", caption = "Summary Statistics (over 18)", row.names
 </tbody>
 </table>
 
-## gender, work status, occupation
-
-# TODO remove NAs, reduce occupation
+## 4. d. gender, work status, occupation
 
 
 
@@ -5834,9 +5823,6 @@ ggplot(data = the_countries, aes(x=reorder(Country, -CDPMean), y=CDPMean, fill=H
 
 ## relationship between age and income
 
-## TODO remove NAs
-
-
 
 ```r
 ggplot(data=subset(proc_age_filtered, !is.na(Gender)), aes(x = Age, y = AnnualInc, color=Gender)) + 
@@ -5848,10 +5834,6 @@ ggplot(data=subset(proc_age_filtered, !is.na(Gender)), aes(x = Age, y = AnnualIn
 ![](analysis_files/figure-html/deeper_5d-1.png)<!-- -->
 
 ## relationship between Life Satisfaction and HDI
-
-## TODO remove NAs
-
-
 
 
 ```r
